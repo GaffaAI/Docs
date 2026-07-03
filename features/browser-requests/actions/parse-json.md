@@ -302,4 +302,4 @@ The credits this action uses depend on the model used. Here are the current supp
 
 | Model         | Input Token Cost                 | Output Token Cost                  |
 | ------------- | -------------------------------- | ---------------------------------- |
-| `gpt-4o-mini` | 1 credit per 10,000 input tokens | 4 credits per 10,000 output tokens |
+| `gpt-4o-mini` | 1 credit per 20,000 input tokens | 1 credits per 10,000 output tokens |
