@@ -1,8 +1,6 @@
 # Parse Table
 
-{% include "../../../.gitbook/includes/beta-feature.md" %}
-
-**Type**: `parse_table`&#x20;
+**Type**: `parse_table`
 
 The `parse_table` action finds a table on a page using a CSS selector and converts it into a structured JSON array with no HTML parsing or post-processing required on your end.
 
