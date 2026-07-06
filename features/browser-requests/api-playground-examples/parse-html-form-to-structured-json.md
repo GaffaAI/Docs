@@ -6,7 +6,7 @@ description: >-
 
 # Parse HTML Form to Structured JSON
 
-The following example is a request we've pre-built to show you Gaffa's capabilities against our [demo site](https://demo.gaffa.dev). You can run this request right here in the [Gaffa API Playground](https://gaffa.dev/dashboard/playground).
+_The following example is a request we've pre-built to show you Gaffa's capabilities against our_ [_demo site_](https://demo.gaffa.dev)_._&#x20;
 
 This example demonstrates how to extract structured information from HTML forms on web pages. Gaffa uses AI to identify form elements and their properties, making it perfect for form automation, testing, accessibility audits, or building form-filling assistants.
 
@@ -267,4 +267,3 @@ The parsed form data is returned as a structured JSON object:
     }
 }
 ```
-

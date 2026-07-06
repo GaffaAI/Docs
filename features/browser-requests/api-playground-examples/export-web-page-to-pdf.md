@@ -7,7 +7,7 @@ description: >-
 
 # Export Web Page to PDF
 
-_**The following example is a request we've prebuilt to show you Gaffa's capabilities on our**_ [_**demo site.**_](https://demo.gaffa.dev) _**You can run this request right now in the**_ [_**Gaffa API Playground**_](https://gaffa.dev/dashboard/playground?templateId=html_to_pdf)_**.**_
+_The following example is a request we've prebuilt to show you Gaffa's capabilities on our_ [_demo site._](https://demo.gaffa.dev) _**You can run this request right now in the**_ [_**Gaffa API Playground**_](https://gaffa.dev/dashboard/playground?templateId=html_to_pdf)_**.**_
 
 Gaffa's print-to-PDF feature allows you to easily export web pages as PDF files. Unlike the standard "Print to PDF" in your local browser, Gaffa's feature waits for specific items to load, uses proxies, and scales with your product's growth. Enhance your customer experience and streamline your PDF export process
 
@@ -55,4 +55,4 @@ Read the full documentation for these actions here.
 
 Here's an example of the PDF returned by the request after the table has loaded.
 
-{% file src="../../../.gitbook/assets/GaffaPrintPdfExample (1).pdf" %}
+{% file src="../../../.gitbook/assets/GaffaPrintPdfExample.pdf" %}

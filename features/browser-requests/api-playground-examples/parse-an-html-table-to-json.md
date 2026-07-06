@@ -6,13 +6,13 @@ description: >-
 
 # Parse an HTML Table to JSON
 
-The following example is a prebuilt request that demonstrates Gaffa's capabilities on our [demo site](https://demo.gaffa.dev/). You can run this request right here in the [Gaffa API Playground](https://gaffa.dev/dashboard/playground).&#x20;
+_The following example is a prebuilt request that demonstrates Gaffa's capabilities on our_ [_demo site_](https://demo.gaffa.dev/)_. **You can run this request right here in the**_ [_**Gaffa API Playground**_](https://gaffa.dev/dashboard/playground?templateId=parse_table)_**.**_
 
-This example demonstrates how to extract tabular data from any webpage without writing a scraper. Gaffa renders the page using a real browser, waits for the table to load, and returns the rows as a clean JSON array, making it perfect for building data pipelines, monitoring dashboards, or feeding structured data into LLM workflows.&#x20;
+This example demonstrates how to extract tabular data from any webpage without writing a scraper. Gaffa renders the page using a real browser, waits for the table to load, and returns the rows as a clean JSON array, making it perfect for building data pipelines, monitoring dashboards, or feeding structured data into LLM workflows.
 
 ## API Request
 
-The request below uses the [POST endpoint](https://gaffa.dev/docs/api-reference/post-v1-browser-requests) to load a demo table page, waits for the table element to appear, and parses each row into a structured JSON array, using the table's header row as property names.&#x20;
+The request below uses the [POST endpoint](https://gaffa.dev/docs/api-reference/post-v1-browser-requests) to load a demo table page, waits for the table element to appear, and parses each row into a structured JSON array, using the table's header row as property names.
 
 ```json
 {
