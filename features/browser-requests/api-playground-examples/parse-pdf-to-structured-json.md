@@ -6,7 +6,7 @@ description: >-
 
 # Parse PDF to Structured JSON
 
-_The following example is a request we've pre-built to show you Gaffa's capabilities against our_ [_demo site_](https://demo.gaffa.dev)_._&#x20;
+_The following example is a request we've pre-built to show you Gaffa's capabilities against our_ [_demo site_](https://demo.gaffa.dev)_. **You can run this request right now in the**_ [_**Gaffa API Playground**_](https://gaffa.dev/dashboard/playground?templateId=parse_academic_paper_pdf)_**.**_
 
 This example demonstrates how to extract data from PDF documents. Gaffa downloads the PDF and uses AI to intelligently parse the content according to your schema, making it perfect for building research databases, citation managers, or literature review tools.
 
