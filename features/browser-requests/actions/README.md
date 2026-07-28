@@ -16,15 +16,15 @@ When [making a Browser Request](../../../api-reference/post-v1-browser-requests.
 
 All actions have the following parameters:
 
-<table data-full-width="false"><thead><tr><th width="226">Name</th><th width="130">Type</th><th width="108" data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>string</code></td><td>true</td><td>The type name of the action.</td></tr><tr><td><code>continue_on_fail</code></td><td><code>boolean</code></td><td>false</td><td>Should execution of further actions continue or throw an error if this action fails. <br><strong>Default:</strong> <code>false</code></td></tr><tr><td><code>customId</code></td><td><code>string</code></td><td>false</td><td>A customId to help you find the action in the response.<br><strong>Default:</strong> <code>null</code></td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="226">Name</th><th width="130">Type</th><th width="108" data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>string</code></td><td>true</td><td>The type name of the action.</td></tr><tr><td><code>continue_on_fail</code></td><td><code>boolean</code></td><td>false</td><td>Should execution of further actions continue or throw an error if this action fails.<br><strong>Default:</strong> <code>false</code></td></tr><tr><td><code>custom_id</code></td><td><code>string</code></td><td>false</td><td>A custom_id to help you find the action in the response.<br><strong>Default:</strong> <code>null</code></td></tr></tbody></table>
 
 #### Action Execution
 
-Actions are carried out in the order they are submitted. Every action type has a `continue_on_fail` parameter, which defaults to `false`.This means that if any action fails, the execution of the browser request ends, and an error will be returned. Setting `continue_on_fail`  to `true` ensures that all actions are carried out, regardless of the previous action's results, and an error will not be returned.
+Actions are carried out in the order they are submitted. Every action type has a `continue_on_fail` parameter, which defaults to `false`.This means that if any action fails, the execution of the browser request ends, and an error will be returned. Setting `continue_on_fail` to `true` ensures that all actions are carried out, regardless of the previous action's results, and an error will not be returned.
 
 #### Custom Id
 
-As shown above, you can submit a customId with each action you submit to the API. We'll include this Id in the outputs from the browser request so you can find a certain action's output and/or status easily in the response.
+As shown above, you can submit a `custom_id` with each action you submit to the API. We'll include this ID in the outputs from the browser request so you can find a certain action's output and/or status easily in the response.
 
 ## Response Format
 
@@ -49,7 +49,7 @@ The Gaffa API supports the following actions, detailed below. Click the "read mo
 
 ### Actions without outputs
 
-<table data-view="cards" data-full-width="true"><thead><tr><th>Type</th><th>Description</th><th>Read More</th></tr></thead><tbody><tr><td><code>click</code></td><td>Click on a given element</td><td><a href="click.md">Click</a></td></tr><tr><td><code>scroll</code></td><td>Scroll to a particular point on the page or,  in the case of pages with infinite scrolling, scroll until a given time has elapsed.</td><td><a href="scroll.md">Scroll</a></td></tr><tr><td><code>type</code></td><td>Type the provided text into a given element</td><td><a href="type.md">Type</a></td></tr><tr><td><code>wait</code></td><td>Wait for a given time to elapse or an element to appear on page before proceeding to the next action.</td><td><a href="wait.md">Wait</a></td></tr></tbody></table>
+<table data-view="cards" data-full-width="true"><thead><tr><th>Type</th><th>Description</th><th>Read More</th></tr></thead><tbody><tr><td><code>click</code></td><td>Click on a given element</td><td><a href="click.md">Click</a></td></tr><tr><td><code>scroll</code></td><td>Scroll to a particular point on the page or, in the case of pages with infinite scrolling, scroll until a given time has elapsed.</td><td><a href="scroll.md">Scroll</a></td></tr><tr><td><code>type</code></td><td>Type the provided text into a given element</td><td><a href="type.md">Type</a></td></tr><tr><td><code>wait</code></td><td>Wait for a given time to elapse or an element to appear on page before proceeding to the next action.</td><td><a href="wait.md">Wait</a></td></tr></tbody></table>
 
 ### Actions with outputs
 
