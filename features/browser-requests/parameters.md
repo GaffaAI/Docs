@@ -53,7 +53,7 @@ When we were building Gaffa, we noticed that many existing scraping tools don't 
 
 ### How it works
 
-When making a browser request, you can provide a `max_cache_age` parameter that is **a number in milliseconds equal to or greater than 0**. This value denotes the maximum age of data you would accept from the API.\
+When making a browser request, you can provide a `max_cache_age` parameter that is **a number in seconds equal to or greater than 0**. This value denotes the maximum age of data you would accept from the API.\
 \
 If another user of our service has requested the same URL with exactly the same parameters and actions as you in this timeframe, the response will be returned to you immediately and will not be processed by one of our browsers. If there are multiple identical requests in the given timeframe, then the most recent will be returned.\
 \
@@ -63,6 +63,6 @@ This will save you time waiting for a response and credits, because requests ret
 
 ## **Settings**
 
-The `settings` object allows you to configure how your browser requests behave. It currently supports three parameters that control recording, media downloads, and execution time limits.
+The `settings` object allows you to configure how your browser requests behave. It currently supports four parameters that control recording, media downloads, and execution time limits.
 
 You can read more about all available settings parameters [here](settings.md).

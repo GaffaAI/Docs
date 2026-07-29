@@ -26,14 +26,14 @@ The following code will wait 1 second, then continue to the next action.
 "actions": [
       {
         "type": "wait",
-        "time": 1000,
+        "time": 1000
       }
 ]
 ```
 
 #### Wait for a particular element to appear
 
-The following code will wait for a table to appear on the page for up to 5 seconds. If the table has not appeared after 5 seconds, the next action will be executed. If the table has not appeared after 5 seconds, the next action still executes.
+The following code will wait for a table to appear on the page for up to 5 seconds. If the table has not appeared after 5 seconds, the next action will be executed.&#x20;
 
 **Wait for table to appear:**
 
@@ -43,7 +43,7 @@ The following code will wait for a table to appear on the page for up to 5 secon
         "type": "wait",
         "selector": "table",
         "timeout": 5000,
-        "continueOnFail": true
+        "continue_on_fail": true
       }
 ]
 ```

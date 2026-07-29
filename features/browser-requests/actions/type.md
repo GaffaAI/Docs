@@ -23,27 +23,9 @@ The following action will type into a particular text field.
 ```json
 "actions": [
       {
-            "name": "type",
+            "type": "type",
             "selector": "#postform-text",
             "text": "Hello world!"
       }
 ]
 ```
-
-#### Wait for an element to appear before typing
-
-The following code will wait up to 10 seconds for the email input field to appear, then type in the provided email.
-
-```json
-"actions": [
-      {
-         "name": "type",
-         "selector": "form input[name="email"]",
-         "text": "test@test.com"
-         "timeout": 10000
-      }
-]
-```
-
-
-

@@ -65,7 +65,7 @@ import json
 
 # Configuration
 GAFFA_API_KEY = "your_api_key_here"  # Replace with your actual API key
-GAFFA_API_URL = "https://api.gaffa.dev/v1/request"
+GAFFA_API_URL = "https://api.gaffa.dev/v1/browser/requests"
 
 # The demo form we'll work with
 FORM_URL = "https://demo.gaffa.dev/simulate/form?loadTime=3&showModal=true&modalDelay=5&formType=address"
@@ -135,7 +135,7 @@ def extract_form_fields(form_url):
 
 ### Collect User Input
 
-Next,  you need to define a function that takes the extracted form data and interacts with the user in the terminal. The function will display the form title and then loop through each field, prompting the user to fill in the value.
+Next, you need to define a function that takes the extracted form data and interacts with the user in the terminal. The function will display the form title and then loop through each field, prompting the user to fill in the value.
 
 For each field in the form, a label and a required marker, if applicable, are shown. The function ensures that the required fields are not left empty and allows users to skip optional fields by pressing enter. All the user's input is collected into a dictionary where the keys are the field names and the values are what the user entered.
 
@@ -185,7 +185,7 @@ def collect_user_input(form_data):
 
 You need a function that will take the form URL and the user's input values, then submit the form to Gaffa's browser automation. The function will build a list of actions.
 
-First, it waits for the form to be ready, then creates a `type` action for each field to enter the user's value into the corresponding input element using CSS selectors. Lastly, it adds a `click` action to submit the form and a `capture_screenshot` action to take a full-screen image of the results.&#x20;
+First, it waits for the form to be ready, then creates a `type` action for each field to enter the user's value into the corresponding input element using CSS selectors. Lastly, it adds a `click` action to submit the form and a `capture_screenshot` action to take a full-screen image of the results.
 
 The function makes a POST request with all these actions and returns the response, which includes the screenshot URL if successful.
 

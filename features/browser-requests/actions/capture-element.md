@@ -4,7 +4,7 @@
 
 **Type**: `capture_element`
 
-Returns the [innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML), essentially the contents, of a particular element on the page. This can be used when you are only interested in the contents of a particular element.&#x20;
+Returns the [innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML) of the element matching your selector. Use it when you need an element's contents, rather than the entire page.
 
 ### Parameters
 
@@ -13,8 +13,6 @@ Returns the [innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element
 See [universal parameters](./#universal-parameters).
 
 ### Usage
-
-#### Click an element on the page
 
 The following code will wait 1 second for the `.page_contents` element to appear and return an HTML file containing the div's innerHTML.
 

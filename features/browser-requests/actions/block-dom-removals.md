@@ -1,7 +1,5 @@
 # Block DOM Removals
 
-{% include "../../../.gitbook/includes/beta-feature.md" %}
-
 **Type:** `block_dom_removals`
 
 This action will prevent the page from removing items from the page. This is useful if you are trying to scrape data from a JavaScript-based web application that removes items from the page when they are out of view, which can make grabbing data difficult.
@@ -14,7 +12,7 @@ See [universal parameters](./#universal-parameters).
 
 ### Usage
 
-Capture the cookies of the current page
+Block DOM removals for the current browser request
 
 ```
 "actions": [

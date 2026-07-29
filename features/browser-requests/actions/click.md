@@ -14,7 +14,7 @@ See [universal parameters](./#universal-parameters).
 
 #### Click an element on the page
 
-The following code will wait 1 second and then continue with the next action, if provided.
+The following clicks the page logo.
 
 ```json
 "actions": [
@@ -25,18 +25,17 @@ The following code will wait 1 second and then continue with the next action, if
 ]
 ```
 
-#### Wait for a particular element to appear
+#### Click an element when it appears
 
-The following code will wait for the logo to appear for a maximum of 5 seconds, and it will continue with the list of actions
+The following waits up to 5 seconds for the logo, then clicks it. It continues if the click fails.
 
 ```json
 "actions": [
       {
-        "type": "wait",
+        "type": "click",
         "selector": "a.header__logo",
-          "timeout": 5000,
-          "continueOnFail": true
+        "timeout": 5000,
+        "continue_on_fail": true
       }
 ]
 ```
-

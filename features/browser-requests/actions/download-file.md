@@ -16,7 +16,7 @@ Currently, this only works with the following file formats: **.pdf, .jpg, .png, 
 
 ### Usage
 
-#### Download a copy of a PDF open in the Browser
+#### Download a copy of a PDF and open it in the Browser
 
 The following waits 20s for a file to download and then returns it.
 

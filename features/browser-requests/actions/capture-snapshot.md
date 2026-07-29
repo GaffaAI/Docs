@@ -22,7 +22,7 @@ The following captures the current section of the page currently visible in the 
 ```json
 "actions": [
     {
-        "type": "capture_snapshot",
+        "type": "capture_snapshot"
     }
 ]
 ```

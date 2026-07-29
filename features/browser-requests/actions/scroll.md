@@ -21,7 +21,7 @@ Gaffa gives you flexibility over how fast you scroll down the page, which can be
 `interval`allows you to adjust the scroll speed further by inserting pauses between scroll events.
 
 {% hint style="info" %}
-We've found some sites with infinite scrolling and strict rate limits respond better to `immediate` speed scroll events to the bottom of the page with large `intervals`between these scrolls to keep within rate limits.
+We've found some sites with infinite scrolling and strict rate limits respond better to `instant` speed scroll events to the bottom of the page with large `intervals` between these scrolls to keep within rate limits.
 {% endhint %}
 
 ### Wait Time
@@ -42,7 +42,7 @@ The following code will scroll halfway down the page.
 "actions": [
       {
         "type": "scroll",
-        "percentage": 50,
+        "percentage": 50
       }
 ]
 ```

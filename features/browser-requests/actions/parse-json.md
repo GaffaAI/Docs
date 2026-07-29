@@ -56,9 +56,12 @@ Each field in the `fields` array has:
 "actions": [
   {
     "type": "parse_json",
+    "model": "gpt-4o-mini",
+    "output_type": "inline",
+    "instruction": "Extract metadata from an article",
     "data_schema": {
       "name": "ArticleMetadata",
-      "instruction": "Extract metadata from an article",
+      "description": "Schema for parsing article Metadata",
       "fields": [
         {
           "type": "string",
@@ -77,8 +80,6 @@ Each field in the `fields` array has:
         }
       ]
     },
-    "model": "gpt-4o-mini",
-    "output_type": "inline"
   }
 ]
 ```
@@ -105,7 +106,7 @@ curl -L \
   --header 'Content-Type: application/json' \
   --data '{
     "name": "ProductInfo",
-    "instruction": "Extract product details from e-commerce pages",
+    "description": "Extract product details from e-commerce pages",
     "fields": [
       {
         "type": "string",
@@ -198,7 +199,7 @@ curl -L \
   --data '{
     "id": "schema_abc123xyz",
     "name": "ProductInfo",
-    "instruction": "Extract detailed product information from e-commerce pages",
+    "description": "Extract detailed product information from e-commerce pages",
     "fields": [
       {
         "type": "string",
@@ -240,7 +241,7 @@ Simple List Extraction
 ```json
 {
   "name": "TagList",
-  "instruction": "Extract article tags",
+  "description": "Extract article tags",
   "fields": [
     {
       "type": "array",
@@ -263,7 +264,7 @@ Simple List Extraction
 ```json
 {
   "name": "ProductWithReviews",
-  "instruction": "Product details with nested review data",
+  "description": "Product details with nested review data",
   "fields": [
     {
       "type": "string",
@@ -300,6 +301,6 @@ Simple List Extraction
 
 The credits this action uses depend on the model used. Here are the current supported models and their pricing:
 
-| Model         | Input Token Cost                 | Output Token Cost                  |
-| ------------- | -------------------------------- | ---------------------------------- |
-| `gpt-4o-mini` | 1 credit per 20,000 input tokens | 1 credits per 10,000 output tokens |
+| Model         | Input Token Cost                 | Output Token Cost                 |
+| ------------- | -------------------------------- | --------------------------------- |
+| `gpt-4o-mini` | 1 credit per 20,000 input tokens | 1 credit per 10,000 output tokens |
