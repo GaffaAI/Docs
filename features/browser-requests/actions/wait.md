@@ -10,7 +10,7 @@ The wait action tells the browser to pause for a specified time or until a parti
 **Parameter Requirements:** You must provide either `time` or `selector`. When using `selector`, `timeout` is required.
 {% endhint %}
 
-<table data-full-width="false"><thead><tr><th width="214">Name</th><th width="130">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>time</code></td><td><code>integer</code></td><td>The time in milliseconds the browser should wait.</td></tr><tr><td><code>selector</code></td><td><code>string</code></td><td>The css <a href="https://www.w3schools.com/cssref/css_selectors.php">selector</a> for the element to wait for. You must provide a <code>timeout</code> when using <code>selector</code>.</td></tr><tr><td><code>timeout</code></td><td><code>integer</code></td><td>The maximum time in milliseconds to wait for <code>selector</code> to appear. Default: 5,000 (5s). Required when using <code>selector</code>.</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="214">Name</th><th width="130">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>time</code></td><td><code>integer</code></td><td>The time in milliseconds the browser should wait.</td></tr><tr><td><code>selector</code></td><td><code>string</code></td><td>The <a href="../selectors.md">selector</a> for the element to wait for. You must provide a <code>timeout</code> when using <code>selector</code>.</td></tr><tr><td><code>timeout</code></td><td><code>integer</code></td><td>The maximum time in milliseconds to wait for <code>selector</code> to appear. Default: 5,000 (5s). Required when using <code>selector</code>.</td></tr></tbody></table>
 
 See [universal parameters](./#universal-parameters).
 

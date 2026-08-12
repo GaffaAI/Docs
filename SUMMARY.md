@@ -9,6 +9,7 @@
 * [Browser Requests](features/browser-requests/README.md)
   * [Parameters](features/browser-requests/parameters.md)
   * [Settings](features/browser-requests/settings.md)
+  * [Selectors](features/browser-requests/selectors.md)
   * [Actions](features/browser-requests/actions/README.md)
     * [Block DOM Removals](features/browser-requests/actions/block-dom-removals.md)
     * [Capture Cookies](features/browser-requests/actions/capture-cookies.md)

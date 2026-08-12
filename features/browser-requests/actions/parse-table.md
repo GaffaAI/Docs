@@ -22,7 +22,7 @@ For cases where you need more control, such as handling merged cells, skipping r
 
 ### Parameters
 
-<table data-full-width="false"><thead><tr><th width="212">Name</th><th width="130">Type</th><th width="108" data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>selector</code></td><td><code>string</code></td><td>true</td><td>The <a href="https://www.w3schools.com/cssref/css_selectors.php">CSS selector</a> that identifies the table you want to parse.</td></tr><tr><td><code>timeout</code></td><td><code>integer</code></td><td>false</td><td>The maximum time in milliseconds to wait for the table to appear. <strong>Default: 5000 (5s)</strong></td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="212">Name</th><th width="130">Type</th><th width="108" data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>selector</code></td><td><code>string</code></td><td>true</td><td>The <a href="../selectors.md">selector</a> that identifies the table you want to parse.</td></tr><tr><td><code>timeout</code></td><td><code>integer</code></td><td>false</td><td>The maximum time in milliseconds to wait for the table to appear. <strong>Default: 5000 (5s)</strong></td></tr></tbody></table>
 
 See [universal parameters](./#universal-parameters).
 
