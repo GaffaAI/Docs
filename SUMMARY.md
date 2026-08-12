@@ -27,6 +27,7 @@
     * [Scroll](features/browser-requests/actions/scroll.md)
     * [Type](features/browser-requests/actions/type.md)
     * [Wait](features/browser-requests/actions/wait.md)
+  * [Tips & Best Practices](features/browser-requests/tips-and-best-practices.md)
   * [API Playground Examples](features/browser-requests/api-playground-examples/README.md)
     * [Export Web Page to PDF](features/browser-requests/api-playground-examples/export-web-page-to-pdf.md)
     * [Convert Web Page to Markdown](features/browser-requests/api-playground-examples/convert-web-page-to-markdown.md)
