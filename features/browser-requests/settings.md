@@ -93,9 +93,18 @@ Start with `max_media_bandwidth: 0` for maximum savings, then adjust upward only
 
 **Parameter:** `time_limit` (integer)
 
-Using the `time_limit` setting caps the maximum running time of the request in milliseconds. If this time expires, all incomplete actions will be canceled, and the request will return an error.
+Using the `time_limit` setting caps the maximum running time of the request in milliseconds. If this time expires, all incomplete actions will be cancelled, and the request will return an error.
 
-This cap must be less than the maximum request runtime specified in your plan; if not set, it defaults to that value.
+This value cannot exceed your plan's maximum request runtime. If omitted, it defaults to that maximum.
+
+### Plan limits
+
+| Plan          | Maximum `time_limit`   |
+| ------------- | ---------------------- |
+| Pay As You Go | 60,000 ms (60 seconds) |
+| Starter       | 60,000 ms (60 seconds) |
+| Startup       | 120,000 ms (2 minutes) |
+| Growth        | 300,000 ms (5 minutes) |
 
 **Example:**
 

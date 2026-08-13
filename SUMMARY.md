@@ -21,6 +21,7 @@
     * [Download File](features/browser-requests/actions/download-file.md)
     * [Generate Markdown](features/browser-requests/actions/generate-markdown.md)
     * [Generate Simplified DOM](features/browser-requests/actions/generate-simplified-dom.md)
+    * [Loop](features/browser-requests/actions/loop.md)
     * [Print](features/browser-requests/actions/print.md)
     * [Parse JSON](features/browser-requests/actions/parse-json.md)
     * [Parse Table](features/browser-requests/actions/parse-table.md)
