@@ -22,6 +22,8 @@ The request below uses the [POST endpoint](https://gaffa.dev/docs/api-reference/
   "proxy_location": null,
   "async": false,
   "max_cache_age": 0,
+  "max_media_bandwidth": null,
+  "time_limit": null,
   "settings": {
     "record_request": false,
     "actions": [
@@ -30,6 +32,9 @@ The request below uses the [POST endpoint](https://gaffa.dev/docs/api-reference/
       },
       {
         "type": "parse_json",
+        "output_type": "inline",
+        "model": "gpt-4o-mini",
+        "instruction": "Parse this academic paper focusing on the title, abstract, and author information typically found on the first page. Extract all author names, their institutional affiliations with department and location details, and their contact information.",
         "data_schema": {
           "name": "AcademicPaper",
           "description": "Schema for parsing academic paper summary and author information",
@@ -87,24 +92,9 @@ The request below uses the [POST endpoint](https://gaffa.dev/docs/api-reference/
                   "description": "Author's contact email address if provided"
                 }
               ]
-            },
-            {
-              "type": "array",
-              "name": "keywords",
-              "description": "Key terms and topics covered in the paper",
-              "fields": [
-                {
-                  "type": "string",
-                  "name": "keyword",
-                  "description": "Individual keyword or phrase"
-                }
-              ]
             }
           ]
         },
-        "instruction": "Parse this academic paper focusing on the title, abstract, author information, and keywords typically found on the first page. Extract all author names, their institutional affiliations with department and location details, and their contact information.",
-        "model": "gpt-4o-mini",
-        "output_type": "inline",
         "max_pages": 1
       }
     ]
@@ -128,86 +118,85 @@ The parsed data is returned as a structured JSON object matching your schema:
 
 ```json
 {
-    "data": {
-        "id": "brq_VYfyVifa26oMpmX4YDeNN3iJDrhK3a",
-        "url": "https://demo.gaffa.dev/simulate/pdf/ReasoningAboutActionAndChange.pdf",
-        "state": "completed",
-        "credit_usage": 0,
-        "http_status_code": 200,
-        "from_cache": false,
-        "started_at": "2025-12-01T06:09:43.6125439Z",
-        "completed_at": "2025-12-01T06:09:57.5453161Z",
-        "running_time": "00:00:13.9327722",
-        "page_load_time": "00:00:00.8959680",
-        "actions": [
+  "data": {
+    "id": "brq_VugUcjuFPM7ZyrMiRK9L8PzYMuPwhX",
+    "url": "https://demo.gaffa.dev/simulate/pdf/ReasoningAboutActionAndChange.pdf",
+    "state": "completed",
+    "credit_usage": 0,
+    "http_status_code": 200,
+    "from_cache": false,
+    "started_at": "2026-08-17T09:43:48.9008466Z",
+    "completed_at": "2026-08-17T09:44:06.9238666Z",
+    "running_time": "00:00:18.0230200",
+    "page_load_time": "00:00:00.4931304",
+    "actions": [
+      {
+        "id": "act_VugUckntLDEu8uJGcEg2nNPt8W3UM3",
+        "type": "download_file",
+        "timestamp": "2026-08-17T09:43:51.1202524Z",
+        "output": "https://storage.gaffa.dev/brq/downloads/brq_VugUcjuFPM7ZyrMiRK9L8PzYMuPwhX/ReasoningAboutActionAndChange.pdf"
+      },
+      {
+        "id": "act_VugUco5GmpoqLF1Khu7J9tUjiy3gkW",
+        "type": "parse_json",
+        "timestamp": "2026-08-17T09:44:06.9237903Z",
+        "output": {
+          "title": "Reasoning about Action and Change",
+          "abstract": "This chapter presents the state of research concerning the formalisation of an agent reasoning about a dynamic system which can be partially observed and acted upon. We first define the basic concepts of the area: system states, ontic and epistemic actions, observations; then the basic reasoning processes: prediction, progression, regression, postdiction, filtering, abduction, and extrapolation. We then recall the classical action representation problems and show how these problems are solved in some standard frameworks. For space reasons, we focus on these major settings: the situation calculus, STRIPS and some propositional action languages, dynamic logic, and dynamic Bayesian networks. We finally address a special case of progression, namely belief update.",
+          "authors": [
             {
-                "id": "act_VYfyVhGPwQjur9XAu5XA47n2FozYfK",
-                "type": "download_file",
-                "timestamp": "2025-12-01T06:09:46.509484Z",
-                "output": "https://storage.gaffa.dev/brq/downloads/brq_VYfyVifa26oMpmX4YDeNN3iJDrhK3a/ReasoningAboutActionAndChange.pdf"
+              "name": "Florence Dupin de Saint-Cyr",
+              "affiliations": [
+                {
+                  "institution": "Universit´ e Paul Sabatier",
+                  "department": "IRIT-CNRS",
+                  "city": "Toulouse",
+                  "country": "France"
+                }
+              ],
+              "email": ""
             },
             {
-                "id": "act_VYfyVjNHWzECbraio6xS6MqhYhiDWP",
-                "type": "parse_json",
-                "timestamp": "2025-12-01T06:09:57.5453056Z",
-                "output": {
-                    "title": "Reasoning about Action and Change",
-                    "abstract": "This chapter presents the state of research concerning the formalisation of an agent reasoning about a dynamic system which can be partially observed and acted upon. We first define the basic concepts of the area: system states, ontic and epistemic actions, observations; then the basic reasoning processes: prediction, progression, regression, postdiction, filtering, abduction, and extrapolation. We then recall the classical action representation problems and show how these problems are solved in some standard frameworks. For space reasons, we focus on these major settings: the situation calculus, STRIPS and some propositional action languages, dynamic logic, and dynamic Bayesian networks. We finally address a special case of progression, namely belief update.",
-                    "authors": [
-                        {
-                            "name": "Florence Dupin de Saint-Cyr",
-                            "affiliations": [
-                                {
-                                    "institution": "IRIT-CNRS. Université Paul Sabatier",
-                                    "department": "",
-                                    "city": "Toulouse",
-                                    "country": "France"
-                                }
-                            ],
-                            "email": ""
-                        },
-                        {
-                            "name": "Andreas Herzig",
-                            "affiliations": [
-                                {
-                                    "institution": "IRIT-CNRS. Université Paul Sabatier",
-                                    "department": "",
-                                    "city": "Toulouse",
-                                    "country": "France"
-                                }
-                            ],
-                            "email": ""
-                        },
-                        {
-                            "name": "Jérôme Lang",
-                            "affiliations": [
-                                {
-                                    "institution": "CNRS, Université Paris-Dauphine, PSL Research University, LAMSADE",
-                                    "department": "",
-                                    "city": "Paris",
-                                    "country": "France"
-                                }
-                            ],
-                            "email": ""
-                        },
-                        {
-                            "name": "Pierre Marquis",
-                            "affiliations": [
-                                {
-                                    "institution": "CRIL-CNRS, Université d’Artois & Institut Universitaire de France",
-                                    "department": "",
-                                    "city": "Lens",
-                                    "country": "France"
-                                }
-                            ],
-                            "email": ""
-                        }
-                    ],
-                    "keywords": []
-                },
-                "reference": "https://storage.gaffa.dev/brq/downloads/brq_VYfyVifa26oMpmX4YDeNN3iJDrhK3a/ReasoningAboutActionAndChange.pdf"
+              "name": "Andreas Herzig",
+              "affiliations": [
+                {
+                  "institution": "Universit´ e Paul Sabatier",
+                  "department": "IRIT-CNRS",
+                  "city": "Toulouse",
+                  "country": "France"
+                }
+              ],
+              "email": ""
+            },
+            {
+              "name": "J´ erˆ ome Lang",
+              "affiliations": [
+                {
+                  "institution": "CNRS, Universit´ e Paris-Dauphine, PSL Research University",
+                  "department": "LAMSADE",
+                  "city": "Paris",
+                  "country": "France"
+                }
+              ],
+              "email": ""
+            },
+            {
+              "name": "Pierre Marquis",
+              "affiliations": [
+                {
+                  "institution": "CRIL-CNRS, Universit´ e d’Artois & Institut Universitaire de France",
+                  "department": "",
+                  "city": "Lens",
+                  "country": "France"
+                }
+              ],
+              "email": ""
             }
-        ]
-    }
+          ]
+        },
+        "reference": "https://storage.gaffa.dev/brq/downloads/brq_VugUcjuFPM7ZyrMiRK9L8PzYMuPwhX/ReasoningAboutActionAndChange.pdf"
+      }
+    ]
+  }
 }
 ```
