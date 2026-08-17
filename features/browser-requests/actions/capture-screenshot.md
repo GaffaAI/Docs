@@ -17,7 +17,7 @@ Takes a screenshot of the current page. You can take a full-screen screenshot of
 
 ### Parameters
 
-<table data-full-width="false"><thead><tr><th width="212">Name</th><th width="130">Type</th><th width="108" data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>size</code></td><td><code>string</code></td><td>false</td><td>The size of paper the page should be printed to.<br><strong>Default:</strong> <code>view</code><br><strong>Accepted</strong>: <code>["view", "fullscreen"]</code></td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="212">Name</th><th width="130">Type</th><th width="108" data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td><code>size</code></td><td><code>string</code></td><td>false</td><td>The area of the page to capture in the screenshot.<br><strong>Default:</strong> <code>view</code><br><strong>Accepted</strong>: <code>["view", "fullscreen"]</code></td></tr></tbody></table>
 
 See [universal parameters](./#universal-parameters).
 
