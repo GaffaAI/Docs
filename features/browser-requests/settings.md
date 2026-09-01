@@ -10,7 +10,7 @@ The `settings` object in your browser request allows you to configure various as
 
 By specifying `record_request`, you can ask Gaffa to screen record your automation and return a video in the response, allowing you to view the magic happening or to debug your automation.
 
-Recording requests comes at an [additional cost](../../credits-and-pricing.md).
+Recording requests come at an [additional cost](../../credits-and-pricing.md).
 
 **Example:**
 
@@ -134,8 +134,8 @@ If you are automating or scraping content on ad-heavy websites, third-party ad n
 
 You can set `block_ads` in two ways:
 
-* "block\_ads": false — Ad blocking disabled (default)
-* "block\_ads": true — Ad blocking enabled
+* `"block_ads": false` — Ad blocking disabled (default)
+* `"block_ads": true` — Ad blocking enabled
 
 **Example:**
 
@@ -152,6 +152,59 @@ You can set `block_ads` in two ways:
   }
 }
 ```
+
+***
+
+## Redirect Logging
+
+**Parameter:** `log_redirects` (boolean)
+
+If you're automating a flow that passes through one or more redirects before landing on a final page such as an affiliate link, a shortened URL, a tracking pixel, or a marketing campaign link, `log_redirects` captures every URL the browser was sent through along the way, not just the final destination.
+
+By enabling `log_redirects`, Gaffa records each redirect hop encountered during the request, whether triggered by the initial page load or by an action such as a [`click`](actions/click.md), and returns them in the `redirects` field of the response.
+
+### Setting options
+
+* `"log_redirects": false` — Redirect logging disabled (default). The `redirects` field is omitted from the response entirely.
+* `"log_redirects": true` — Redirect logging enabled. `redirects` is populated with every hop captured during the request.
+
+**Example**
+
+Tracking the redirect chain behind the marketing email link, from the shortened click-tracking URL through to the final landing page:
+
+```json
+{
+  "url": "https://link.example-brand.com/e/click?upn=abc123-XYZ",
+  "max_cache_age": 0,
+  "settings": {
+    "log_redirects": true,
+    "actions": [
+      { "type": "wait", "time": 3000 }
+    ]
+  }
+}
+```
+
+The relevant part of the **response**:
+
+```json
+{
+  "actual_url": "https://www.example-brand.com/products/new-arrivals?utm_source=email&utm_medium=campaign&utm_campaign=spring_launch&subscriber_id=987654",
+  "redirects": [
+    "https://click.example-esp.com/track/click?upn=abc123-XYZ&sub_id=987654",
+    "https://link.example-brand.com/e/click?upn=abc123-XYZ",
+    "https://www.example-brand.com/products/new-arrivals?utm_source=email&utm_medium=campaign&utm_campaign=spring_launch&subscriber_id=987654"
+  ]
+}
+```
+
+### Common use cases
+
+* **Marketing campaign QA** — check that UTM parameters and click IDs on an email, ad, or social link survive the full redirect chain instead of getting dropped or overwritten partway through.
+* **Affiliate and voucher link auditing** — confirm that a "get code" or "shop now" link actually routes through the correct affiliate network and arrives at the intended retailer page, with tracking parameters (like `utm_source`, click IDs) intact at each hop. Useful for verifying a partner integration is wired up correctly, or diagnosing why commission tracking isn't crediting properly.
+* **Redirect chain / SEO auditing** — after a site migration or URL restructure, confirm old URLs resolve to the correct new destination in as few hops as possible. Long or looping redirect chains hurt both page speed and SEO.
+* **Link safety verification** — see every intermediate domain a link passes through before landing on its final destination, useful for checking that shortened or obfuscated links (in emails, ads, QR codes) aren't routing through anything unexpected.
+* **Debugging unexpected destinations** — when a request ends up somewhere you didn't expect (a geo-redirect, an A/B test split, a broken campaign link), the full chain shows exactly which hop diverged, rather than just the final URL.
 
 ***
 
