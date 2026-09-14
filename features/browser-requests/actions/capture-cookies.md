@@ -23,7 +23,7 @@ See [universal parameters](./#universal-parameters).
 
 Capture the cookies of the current page
 
-```
+```json
 "actions": [
     {
       "type": "capture_cookies"

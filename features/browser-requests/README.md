@@ -47,6 +47,116 @@ You can read more about this particular example and how you can run it right now
 }
 ```
 
+### Run this request
+
+Set `GAFFA_API_KEY` to an API key from [**Dashboard → API Keys**](https://gaffa.dev/dashboard/api-keys). Then choose your preferred language.
+
+{% tabs %}
+{% tab title="cURL" %}
+```sh
+curl --request POST 'https://api.gaffa.dev/v1/browser/requests' \
+  --header 'Content-Type: application/json' \
+  --header "X-API-Key: $GAFFA_API_KEY" \
+  --data '{
+    "url": "https://demo.gaffa.dev/simulate/table?loadTime=3&rowCount=20",
+    "proxy_location": null,
+    "async": false,
+    "max_cache_age": 0,
+    "settings": {
+      "record_request": false,
+      "max_media_bandwidth": null,
+      "actions": [
+        {
+          "type": "wait",
+          "selector": "table"
+        },
+        {
+          "type": "print",
+          "size": "A4",
+          "margin": 20,
+          "orientation": "portrait"
+        }
+      ]
+    }
+  }'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+import json
+import os
+from urllib.request import Request, urlopen
+
+payload = {
+    "url": "https://demo.gaffa.dev/simulate/table?loadTime=3&rowCount=20",
+    "proxy_location": None,
+    "async": False,
+    "max_cache_age": 0,
+    "settings": {
+        "record_request": False,
+        "max_media_bandwidth": None,
+        "actions": [
+            {"type": "wait", "selector": "table"},
+            {
+                "type": "print",
+                "size": "A4",
+                "margin": 20,
+                "orientation": "portrait",
+            },
+        ],
+    },
+}
+
+request = Request(
+    "https://api.gaffa.dev/v1/browser/requests",
+    data=json.dumps(payload).encode(),
+    headers={
+        "Content-Type": "application/json",
+        "X-API-Key": os.environ["GAFFA_API_KEY"],
+    },
+    method="POST",
+)
+
+with urlopen(request) as response:
+    print(response.read().decode())
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const response = await fetch("https://api.gaffa.dev/v1/browser/requests", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-API-Key": process.env.GAFFA_API_KEY,
+  },
+  body: JSON.stringify({
+    url: "https://demo.gaffa.dev/simulate/table?loadTime=3&rowCount=20",
+    proxy_location: null,
+    async: false,
+    max_cache_age: 0,
+    settings: {
+      record_request: false,
+      max_media_bandwidth: null,
+      actions: [
+        { type: "wait", selector: "table" },
+        {
+          type: "print",
+          size: "A4",
+          margin: 20,
+          orientation: "portrait",
+        },
+      ],
+    },
+  }),
+});
+
+console.log(await response.json());
+```
+{% endtab %}
+{% endtabs %}
+
 ### Stealth
 
 We believe your AI Agents should be able to use the internet exactly how humans would. Gaffa can help you access sites with some of the most challenging anti-bot restrictions by combining proxies, human-like behaviour, captcha solving, and a custom browser implementation. We handle and maintain all of that so you can focus on building your solution!
@@ -61,7 +171,7 @@ We believe your AI Agents should be able to use the internet exactly how humans 
 
 [**Examples**](api-playground-examples/) — View pre-built requests and start using them in the API Playground
 
-[**API Reference**](../../api-reference/README.md)— Complete endpoint documentation and technical details
+[**API Reference**](../../api-reference/)— Complete endpoint documentation and technical details
 
 ### Examples
 

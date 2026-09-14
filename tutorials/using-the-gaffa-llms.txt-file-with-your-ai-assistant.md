@@ -98,4 +98,4 @@ You'll see the job state printed in your terminal and a downloaded Markdown file
 
 #### Step 5: Extend and Customise
 
-From here, you can modify the `actions` list to use other supported operations, such as `generate_pdf`, `screenshot`, or `extract_text`. You can make these changes manually, or simply ask your AI assistant to adapt the script for you. Since it still has the `llms.txt` context loaded, it can adjust the code to your specific requirements without needing any further explanation.
+From here, you can modify the `actions` list to use other supported operations, such as `print`, `capture_screenshot`, or `capture_dom`. You can make these changes manually, or simply ask your AI assistant to adapt the script for you. Since it still has the `llms.txt` context loaded, it can adjust the code to your specific requirements without needing any further explanation.

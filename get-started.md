@@ -2,8 +2,6 @@
 description: >-
   An introduction to the Gaffa Browser API. Learn how you can get started
   building fast, powerful web automations!
-cover: https://gitbookio.github.io/onboarding-template-images/header.png
-coverY: 0
 ---
 
 # Get Started
@@ -20,23 +18,41 @@ To stay up to date with the latest developments, features, and news on the missi
 {% step %}
 ## Create an account
 
-You can sign up to create a Gaffa account [here](https://gaffa.dev/auth/sign-in). After signing up, you can use the API to access our [API Playground](https://gaffa.dev/dashboard/playground), which includes several prebuilt automations for [our demo site](https://demo.gaffa.dev/) that simulate a range of scenarios.&#x20;
-
-#### Accessing the open web
-
-When you're ready to use Gaffa on the open web, you'll need to choose a plan that suits your needs and pay for it. After that, the full internet will be available for you to automate.
-
-{% hint style="warning" %}
-To avoid scaling issues for our existing customers, we are currently using a queuing system for new accounts. Simply join the queue when prompted on your [account dashboard](https://gaffa.dev/dashboard), and we'll let you know when you have access.\
-\
-If you want to jump the queue, you can fill out a short survey to help us better understand our users, and we'll approve your account sooner!
-{% endhint %}
+You can sign up to create a Gaffa account [here](https://gaffa.dev/auth/sign-in). Every new account comes with 500 free credits, which you can use to start building and running automations on the open web right away. You can also use the [API Playground](https://gaffa.dev/dashboard/playground) to explore prebuilt automations built against the Gaffa [demo site](https://demo.gaffa.dev/) and experiment with Gaffa's features.
 {% endstep %}
 
 {% step %}
 ## Making your first browser request
 
-The easiest way to make your first Gaffa [browser request](features/browser-requests/) is to use our [API Playground](https://gaffa.dev/dashboard/playground), where you can see several pre-made interactive browser request examples of automations we've built against our test site, which simulates some common scraping and web automation scenarios. You can run these examples without a paid account and edit them easily to experiment. Once you have a paid account, you can also use the playground to build your automations for other sites.
+The easiest way to make your first Gaffa [browser request](features/browser-requests/) is to use our [API Playground](https://gaffa.dev/dashboard/playground), where you can explore pre-made interactive browser request examples built against our test site. You can run and edit these examples to experiment, or use your 500 free credits to build and test automations on other sites across the open web.
+
+You can also send your first request directly from the command line. Replace `YOUR_API_KEY` with a key from [**Dashboard → API Keys**](https://gaffa.dev/dashboard/api-keys).
+
+```sh
+curl --request POST 'https://api.gaffa.dev/v1/browser/requests' \
+  --header 'Content-Type: application/json' \
+  --header 'X-API-Key: YOUR_API_KEY' \
+  --data '{
+    "url": "https://demo.gaffa.dev/simulate/table?loadTime=3&rowCount=20",
+    "async": false,
+    "settings": {
+      "actions": [
+        {
+          "type": "wait",
+          "selector": "table"
+        },
+        {
+          "type": "print",
+          "size": "A4",
+          "margin": 20,
+          "orientation": "portrait"
+        }
+      ]
+    }
+  }'
+```
+
+See [Browser Requests](features/browser-requests/) for full cURL, Python, and JavaScript examples.
 
 ### Gaffa API Playground examples
 
@@ -48,7 +64,7 @@ Here are all the sample requests we've created for use in the API Playground.
 {% step %}
 ## Building your own browser requests
 
-Once you have a paid account and are ready to start building your own browser requests, you'll want to read about all the other [actions ](features/browser-requests/actions/)you can use for your solution, as well as how you can easily use [proxy servers](features/browser-requests/#proxy-servers), [our cache](features/browser-requests/#caching), and the [other endpoints that are part of the API](api-reference/README.md)
+When you're ready to start building your own browser requests, you'll want to explore the available [actions](features/browser-requests/actions/), [proxy servers](features/browser-requests/parameters.md#proxy-servers), [caching](features/browser-requests/parameters.md#caching) options, and [other endpoints that are part of the Gaffa API](https://app.gitbook.com/s/yUba6osOT5MkKiV0wmgr/api-reference).
 {% endstep %}
 {% endstepper %}
 

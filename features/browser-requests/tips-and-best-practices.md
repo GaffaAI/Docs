@@ -38,7 +38,7 @@ Setting `max_media_bandwidth: 0` stops images from loading, and some sites read 
 
 #### How does caching work in Gaffa?
 
-Set `max_cache_age` in milliseconds to say how old a result you'll accept. If anyone has made the same request within that window, you get their response immediately, at no additional bandwidth cost.
+Set `max_cache_age` in seconds to say how old a result you'll accept. If anyone has made the same request within that window, you get their response immediately, at no additional bandwidth cost.
 
 #### Why didn't my request come back from the cache?
 

@@ -71,7 +71,7 @@ Gaffa scrolling to the bottom of a simulated ecommerce page!
 
 ## Read More
 
-Read more about screen recording here. (TODO)
+Read more about screen recording [here](../settings.md#screen-recording).
 
 {% content-ref url="../../../get-started.md" %}
 [get-started.md](../../../get-started.md)

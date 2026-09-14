@@ -95,7 +95,7 @@ Start with `max_media_bandwidth: 0` for maximum savings, then adjust upward only
 
 Using the `time_limit` setting caps the maximum running time of the request in milliseconds. If this time expires, all incomplete actions will be cancelled, and the request will return an error.
 
-This value cannot exceed your plan's maximum request runtime. If omitted, it defaults to that maximum.
+This value cannot exceed your plan's maximum request runtime. If omitted, it defaults to 60 seconds irrespective of your plan.
 
 ### Plan limits
 

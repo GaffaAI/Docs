@@ -25,7 +25,7 @@ See [universal parameters](./#universal-parameters).
 
 ### Usage
 
-The following code will wait 1 second for the `.page_contents` element to appear and return an HTML file containing the div's innerHTML.
+The following code will wait 1 second for the `.page_contents` element to appear and return an HTML file containing the div's outerHTML.
 
 ```json
 "actions": [

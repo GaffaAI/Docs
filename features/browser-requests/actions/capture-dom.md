@@ -27,7 +27,7 @@ See [universal parameters](./#universal-parameters).
 
 Capture the raw DOM of the current page
 
-```
+```json
 "actions": [
     {
       "type": "capture_dom"

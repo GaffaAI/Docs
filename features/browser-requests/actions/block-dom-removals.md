@@ -25,7 +25,7 @@ See [universal parameters](./#universal-parameters).
 
 Block DOM removals for the current browser request
 
-```
+```json
 "actions": [
     {
       "type": "block_dom_removals"

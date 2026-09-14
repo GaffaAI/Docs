@@ -13,7 +13,7 @@ In this tutorial, you'll learn how to use Gaffa's powerful [Mapping](../features
 By the end of this guide, you'll be able to:
 
 * Use Gaffa's [`site/map`](../features/mapping-requests.md) endpoint to discover every page on a site.
-* &#x20;Render each page with a headless browser to capture its full DOM.
+* Render each page with a headless browser to capture its full DOM.
 * Parse and download all images using Gaffa's [`download_file`](../features/browser-requests/actions/download-file.md) action with residential proxies
 * Run the process at scale with built-in proxy rotation and caching.
 
@@ -29,7 +29,7 @@ By the end of this guide, you'll be able to:
 
 First, create a new project directory and install the required Python libraries.
 
-```
+```sh
 # Create a new directory and navigate into it
 mkdir gaffa-image-scraper && cd gaffa-image-scraper
 
@@ -40,7 +40,7 @@ source venv/bin/activate
 
 Next, set your Gaffa API key as an environment variable to keep it secure.
 
-```
+```sh
 # On macOS/Linux
 export GAFFA_API_KEY='your_gaffa_api_key_here'
 ```
@@ -55,7 +55,7 @@ Let's build the script step-by-step. The core logic consists of three main parts
 
 The `site/map` endpoint is our starting point. It does the heavy lifting of discovery by reading the sitemap, traversing potential link-outs, and retrieving every page on the website you want to scrape.
 
-```
+```python
 def get_sitemap_urls(site_url, max_cache_age=86400):
     payload = {
         "url": site_url,
@@ -71,7 +71,7 @@ def get_sitemap_urls(site_url, max_cache_age=86400):
 
 For each URL, we use Gaffa to fully render the page (including JavaScript execution) and capture the final DOM. This is an important step since many websites are actually not fully rendered when we receive them. They contain links to JavaScript files that need to be executed first. These scripts will load further content from the backend, load images and other data. It’s necessary to first generate a fully rendered page before diving deeper into scraping it; otherwise, we would only scrape the content already provided in the initial HTML.
 
-```
+```python
 def get_dom(url):
     payload = {
         "url": url,
@@ -97,7 +97,7 @@ def get_dom(url):
 
 With the real HTML in hand, we extract image URLs using a simple regex pattern and use Gaffa's [`download_file`](../features/browser-requests/actions/download-file.md) action for secure, reliable downloads. This also allows us to use caching, which avoids downloading the same image over and over again and putting a load on the target server.
 
-```
+```python
 def extract_image_urls(dom_content, base_url):
     image_urls = []
     src_pattern = r'<img[^>]+(?:src|data-src)=["\']([^"\']+)["\']'
@@ -138,7 +138,7 @@ def download_image(image_url, filename):
 
 The main() function orchestrates the entire workflow: mapping the site, processing each page, and downloading the images using Gaffa's infrastructure.
 
-```
+```python
 def main():
     site_url = "https://gaffa.dev"
     sitemap_urls = get_sitemap_urls(site_url)[:3]
@@ -153,8 +153,6 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
-
 {% endstep %}
 
 {% step %}
@@ -162,7 +160,7 @@ if __name__ == "__main__":
 
 Save the complete code to a file like `gaffa_scrape_images.py` and run it from your terminal:
 
-```
+```sh
 python3 gaffa_scrape_images.py
 ```
 

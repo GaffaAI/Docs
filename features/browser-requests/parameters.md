@@ -6,10 +6,6 @@ Below you'll find detailed documentation for each available parameter.
 
 ## Proxy servers
 
-{% hint style="info" %}
-In order to access public sites and use proxy servers, you'll need to sign up for a [paid account](https://gaffa.dev/#pricing), but after that, you'll be able to build automations for any site you wish.
-{% endhint %}
-
 Gaffa makes it super simple to proxy your traffic through a global network of residential proxies. Setting `proxy_location` in your request will allow you to utilize one of our partner third-party proxy services to gain local access to a site.
 
 Not setting a `proxy_location` will mean the request does not use a proxy server and will use a generic datacenter IP.
@@ -47,7 +43,7 @@ Whilst we'll do our best to provide access to as wide a range of sites as possib
 
 ## Caching
 
-`max_cache_age`: integer
+`max_cache_age`: integer (seconds)
 
 When we were building Gaffa, we noticed that many existing scraping tools don't let users easily share their scraped web data, even though many users request the same pages on the same sites. Not only is this a waste of a user's allowance, but it also puts a burden on the site owners who are serving the same data to different users for the same purpose. Because of this, we have created a service-wide cache in Gaffa.
 
@@ -63,6 +59,6 @@ This will save you time waiting for a response and credits, because requests ret
 
 ## **Settings**
 
-The `settings` object allows you to configure how your browser requests behave. It currently supports four parameters that control recording, media downloads, and execution time limits.
+The `settings` object allows you to configure how your browser requests behave. It currently supports six parameters that control request recording, media downloads, execution time limits, ad blocking, redirect logging, and browser actions.
 
 You can read more about all available settings parameters [here](settings.md).

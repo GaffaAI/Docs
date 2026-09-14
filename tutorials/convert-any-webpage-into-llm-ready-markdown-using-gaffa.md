@@ -26,8 +26,8 @@ pip install requests openai
 4. Get your [Gaffa API](https://gaffa.dev/dashboard/api-keys) key and [OpenAI API](https://platform.openai.com/signup) key, and store them as environment variables:
 
 ```sh
-GAFFA_API_KEY=your_gaffa_api_key
-OPENAI_API_KEY=your_openai_api_key
+export GAFFA_API_KEY=your_gaffa_api_key
+export OPENAI_API_KEY=your_openai_api_key
 ```
 
 ### Convert a webpage to Markdown
@@ -36,8 +36,9 @@ In the code below, we define a function that takes a URL as input, makes a POST 
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```python
+import os
 import requests
-import openai
+from openai import OpenAI
 
 GAFFA_API_KEY = os.getenv("GAFFA_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -92,20 +93,22 @@ Now that we have the markdown content, we can ask questions about it using the O
 {% code overflow="wrap" lineNumbers="true" %}
 ```python
 def ask_question(markdown, question):
-    openai.api_key = OPENAI_API_KEY
+    client = OpenAI(api_key=OPENAI_API_KEY)
+
     prompt = (
-        f"You are an assistant helping analyze different webpages.\n\n"
+        "You are an assistant helping analyze different webpages.\n\n"
         f"Markdown content:\n{markdown[:3000]}\n\n"
         f"Question: {question}\nAnswer as clearly as possible."
     )
 
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
         messages=[
             {"role": "user", "content": prompt}
         ]
     )
-    return response.choices[0].message["content"]
+
+    return response.choices[0].message.content
 ```
 {% endcode %}
 
@@ -133,7 +136,7 @@ def main():
     except Exception as e:
         print(f"⚠️ Error: {e}")
 
- if __name__ == "__main__":
+if __name__ == "__main__":
     main()
 ```
 {% endcode %}

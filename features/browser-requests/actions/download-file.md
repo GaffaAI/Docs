@@ -26,7 +26,7 @@ See [universal parameters](./#universal-parameters).
 
 ### Files Supported
 
-Currently, this only works with the following file formats: **.pdf, .jpg, .png, .gif, .bmp, .webp, .svg, .tiff, .tif, .img**
+Currently, this only works with the following file formats: **.pdf, .jpg, .jpeg, .png, .gif, .bmp, .webp, .svg, .tiff, .tif, .img**
 
 ### Usage
 
@@ -34,7 +34,7 @@ Currently, this only works with the following file formats: **.pdf, .jpg, .png, 
 
 The following waits 20s for a file to download and then returns it.
 
-```
+```json
 "actions": [
     {
         "type": "download_file",
@@ -45,7 +45,7 @@ The following waits 20s for a file to download and then returns it.
 
 And the service responds with the file being in the action output:
 
-```
+```json
 "actions": [
       {
         "id": "act_VHhrUbXjZSaYCPTqbBYD4acCzzeFGH",
