@@ -12,7 +12,7 @@ This example demonstrates how to extract tabular data from any webpage without w
 
 ## API Request
 
-The request below uses the [POST endpoint](https://gaffa.dev/docs/api-reference/post-v1-browser-requests) to load a demo table page, waits for the table element to appear, and parses each row into a structured JSON array, using the table's header row as property names.
+The request below uses the [POST endpoint](../../../api-reference/post-v1-browser-requests.md) to load a demo table page, waits for the table element to appear, and parses each row into a structured JSON array, using the table's header row as property names.
 
 ```json
 {

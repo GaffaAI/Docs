@@ -38,6 +38,7 @@
     * [Parse PDF to Structured JSON](features/browser-requests/api-playground-examples/parse-pdf-to-structured-json.md)
     * [Parse HTML Form to Structured JSON](features/browser-requests/api-playground-examples/parse-html-form-to-structured-json.md)
     * [Parse an HTML Table to JSON](features/browser-requests/api-playground-examples/parse-an-html-table-to-json.md)
+    * [Loop Through Pagination](features/browser-requests/api-playground-examples/loop-through-pagination.md)
 * [Mapping Requests](features/mapping-requests.md)
 
 ## API Reference
