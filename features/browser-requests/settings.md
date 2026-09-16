@@ -99,12 +99,7 @@ This value cannot exceed your plan's maximum request runtime. If omitted, it def
 
 ### Plan limits
 
-| Plan          | Maximum `time_limit`   |
-| ------------- | ---------------------- |
-| Pay As You Go | 60,000 ms (60 seconds) |
-| Starter       | 60,000 ms (60 seconds) |
-| Startup       | 120,000 ms (2 minutes) |
-| Growth        | 300,000 ms (5 minutes) |
+<table data-header-hidden><thead><tr><th width="150.75994873046875"></th><th width="212.4432373046875"></th><th></th></tr></thead><tbody><tr><td><strong>Plan</strong></td><td><strong>Maximum <code>time_limit</code> (async)</strong></td><td><strong>Maximum <code>time_limit</code> (sync)</strong></td></tr><tr><td>Pay As You Go</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Starter</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Startup</td><td>120,000 ms (2 min)</td><td>120,000 ms (2 min)</td></tr><tr><td>Growth</td><td>300,000 ms (5 min)</td><td>120,000 ms (2 min) — clamped</td></tr></tbody></table>
 
 **Example:**
 
@@ -118,7 +113,94 @@ This value cannot exceed your plan's maximum request runtime. If omitted, it def
 }
 ```
 
-***
+<details>
+
+<summary><strong>Time limit edge cases with examples</strong></summary>
+
+#### Scenario 1: a request hits \`time\_limit\` before finishing
+
+If an action is still running when `time_limit` is reached, the request is cancelled where it stands rather than left to finish. This applies identically whether the request is sync or async — for async, you'll see it on your next poll; for sync, it's what comes back directly on the call.
+
+Request:
+
+```json
+{
+  "url": "https://demo.gaffa.dev/simulate/article?loadTime=1&paragraphs=5&images=1",
+  "async": false,
+  "max_cache_age": 0,
+  "settings": {
+    "time_limit": 60000,
+    "actions": [
+      { "type": "wait", "time": 90000 }
+    ]
+  }
+}
+```
+
+Response:
+
+```json
+{
+  "data": {
+    "id": "brq_VwPVD9DXWJg6ogGFkK2mYmDJhhGrB9",
+    "url": "https://demo.gaffa.dev/simulate/article?loadTime=1&paragraphs=5&images=1",
+    "state": "completed",
+    "credit_usage": 0,
+    "error": "request_timeout",
+    "error_reason": "The request hit the maximum allowed time and was cancelled.",
+    "http_status_code": 200,
+    "from_cache": false,
+    "started_at": "2026-09-07T11:06:19.7474958Z",
+    "completed_at": "2026-09-07T11:07:20.7592414Z",
+    "running_time": "00:01:01.0117456",
+    "page_load_time": "00:00:00.4019099",
+    "actions": [
+      { "id": "act_VwPVD4y9uUEFnDAh8RYf9RF7seMEUG", "type": "wait", "error": "action_cancelled" }
+    ]
+  }
+}
+```
+
+`running_time` (61.01s) runs slightly past the declared `time_limit` (60s) before the cutoff registers. So, expect a small grace margin of roughly a second, not an exact-millisecond cutoff. A request cancelled this way isn't billed.
+
+#### Scenario 2: an explicit `time_limit` above your plan's cap
+
+Setting `time_limit` higher than your plan allows is rejected before the request runs at all. It returns a `400`, not a cancelled request later.
+
+Request:
+
+```json
+{
+  "url": "https://demo.gaffa.dev/simulate/table?loadTime=1&rowCount=20",
+  "async": false,
+  "max_cache_age": 0,
+  "settings": {
+    "time_limit": 90000,
+    "actions": [
+      { "type": "wait", "selector": "table", "timeout": 5000 }
+    ]
+  }
+}
+```
+
+Response:
+
+```json
+{
+  "error": {
+    "type": "browser_request",
+    "id": "60000",
+    "code": "time_limit_too_long",
+    "message": "The time limit should be under the ms for your plan"
+  }
+}
+```
+
+#### Scenario 3: no `time_limit` set
+
+Omitting `time_limit` defaults to 60,000 ms (60 seconds) for both sync and async requests, regardless of your plan's actual maximum. You opt in to a longer run explicitly; you don't get it automatically.
+
+</details>
 
 ## Ad Blocking
 
