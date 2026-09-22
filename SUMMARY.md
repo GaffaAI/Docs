@@ -26,6 +26,7 @@
     * [Parse JSON](features/browser-requests/actions/parse-json.md)
     * [Parse Table](features/browser-requests/actions/parse-table.md)
     * [Scroll](features/browser-requests/actions/scroll.md)
+    * [Select](features/browser-requests/actions/select.md)
     * [Type](features/browser-requests/actions/type.md)
     * [Wait](features/browser-requests/actions/wait.md)
   * [Tips & Best Practices](features/browser-requests/tips-and-best-practices.md)

@@ -1,6 +1,12 @@
+---
+description: >-
+  An example request that uses Gaffa to loop through different type of pages and
+  perform actions.
+---
+
 # Loop Through Pagination
 
-_The following examples are prebuilt requests we've put together to show you Gaffa's capabilities against our demo site. **You can run any of them right now in the&#x20;**_~~_**Gaffa API Playground**_~~_**.**_
+_The following examples are prebuilt requests we've put together to show you Gaffa's capabilities against our demo site. **You can run any of them right now in the**_ [_**Gaffa API Playground**_](https://gaffa.dev/dashboard/playground?templateId=loop_pagination_numbered)_**.**_
 
 These examples demonstrate the [`loop`](../actions/loop.md) action, which repeats a sequence of nested actions on every page of a paginated site, capturing the DOM (and optionally a screenshot) of each page until the pagination control disappears or a fixed number of iterations is reached, or a timeout is hit. This is useful for scraping listing pages, catalogues, or search results that span multiple pages, without having to send a separate request per page.
 
@@ -12,11 +18,11 @@ Pagination UIs vary from site to site, so below are three common patterns and ho
 
 ## Numbered Pagination
 
-This example opens an ecommerce demo site that pages through its product listing using numbered page controls (1, 2, 3…), and loops through all 5 pages, capturing the DOM and a full-page screenshot of each one.
+This example opens an e-commerce demo site that pages through its product listing using numbered page controls (1, 2, 3…), and loops through all 5 pages, capturing the DOM and a full-page screenshot of each one.
 
 ### API Request
 
-The request below uses the [POST endpoint](../../../api-reference/post-v1-browser-requests.md) to open the [demo site](https://demo.gaffa.dev/simulate/ecommerce?loadTime=0\&showModal=false\&modalDelay=0\&loadingMode=paged\&pagingStyle=numbered\&pageCount=5\&pageSize=10\&itemCount=50\&itemLoadTime=0\&isVirtualScroll=false\&page=1), wait for the first product to render, then loop up to 5 times: on each iteration, it waits briefly for the page to settle, captures the DOM, takes a full-screen screenshot, and clicks the next numbered page button. _**You can run this request in the Gaffa API Playground.**_
+The request below uses the [POST endpoint](../../../api-reference/post-v1-browser-requests.md) to open the [demo site](https://demo.gaffa.dev/simulate/ecommerce?loadTime=0\&showModal=false\&modalDelay=0\&loadingMode=paged\&pagingStyle=numbered\&pageCount=5\&pageSize=10\&itemCount=50\&itemLoadTime=0\&isVirtualScroll=false\&page=1), wait for the first product to render, then loop up to 5 times: on each iteration, it waits briefly for the page to settle, captures the DOM, takes a full-screen screenshot, and clicks the next numbered page button. _**You can run this request in the**_ [_**Gaffa API Playground**_](https://gaffa.dev/dashboard/playground?templateId=loop_pagination_numbered)_**.**_
 
 ```json
 {
@@ -104,7 +110,7 @@ This example opens a demo site that shows a cookie-consent modal on load and pag
 
 ### API Request
 
-The request below uses the [POST endpoint](../../../api-reference/post-v1-browser-requests.md) to open the [demo site](https://demo.gaffa.dev/simulate/ecommerce?loadTime=1\&showModal=true\&modalDelay=1\&loadingMode=paged\&pagingStyle=next\&pageCount=3\&pageSize=3\&itemCount=30\&itemLoadTime=0\&isVirtualScroll=true\&page=1), dismiss the cookie modal, wait for the first product to render, then loop up to 3 times: on each iteration, it waits briefly, captures the DOM, and clicks "Next page". _**You can run this request in the Gaffa API Playground.**_
+The request below uses the [POST endpoint](../../../api-reference/post-v1-browser-requests.md) to open the [demo site](https://demo.gaffa.dev/simulate/ecommerce?loadTime=1\&showModal=true\&modalDelay=1\&loadingMode=paged\&pagingStyle=next\&pageCount=3\&pageSize=3\&itemCount=30\&itemLoadTime=0\&isVirtualScroll=true\&page=1), dismiss the cookie modal, wait for the first product to render, then loop up to 3 times: on each iteration, it waits briefly, captures the DOM, and clicks "Next page". _**You can run this request in the**_ [_**Gaffa API Playground**_](https://gaffa.dev/dashboard/playground?templateId=loop_pagination_next_button)_**.**_
 
 ```json
 {
@@ -177,7 +183,7 @@ This example opens a demo site that shows a cookie-consent modal on load and loa
 
 ### API Request
 
-The request below uses the [POST endpoint](../../../api-reference/post-v1-browser-requests.md) to open the [demo site](https://demo.gaffa.dev/simulate/ecommerce?loadTime=1\&showModal=true\&modalDelay=1\&loadingMode=paged\&pagingStyle=show-more\&pageCount=4\&pageSize=10\&itemCount=40\&itemLoadTime=0\&isVirtualScroll=false\&page=1), dismiss the cookie modal, wait for the first product to render, then loop up to 4 times: on each iteration, it waits briefly, captures the DOM, takes a full-screen screenshot, and clicks "Show more". ~~_**You can run this request in the Gaffa API Playground.**_~~
+The request below uses the [POST endpoint](../../../api-reference/post-v1-browser-requests.md) to open the [demo site](https://demo.gaffa.dev/simulate/ecommerce?loadTime=1\&showModal=true\&modalDelay=1\&loadingMode=paged\&pagingStyle=show-more\&pageCount=4\&pageSize=10\&itemCount=40\&itemLoadTime=0\&isVirtualScroll=false\&page=1), dismiss the cookie modal, wait for the first product to render, then loop up to 4 times: on each iteration, it waits briefly, captures the DOM, takes a full-screen screenshot, and clicks "Show more". _**You can run this request in the**_ [_**Gaffa API Playground**_](https://gaffa.dev/dashboard/playground?templateId=loop_show_more_pagination)_**.**_
 
 ```json
 {
