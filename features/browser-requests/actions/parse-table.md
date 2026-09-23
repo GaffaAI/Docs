@@ -115,4 +115,4 @@ Use [`parse_json`](parse-json.md) when the data isn't in a real table — a grid
 
 #### What if the data looks like a table but isn't one?
 
-`parse_table` only works on `<table>` markup. For grids made of divs or lists, use [`parse_json`](parse-json.md) with a `schema`, or [`capture_element`](capture-element.md) and parse the HTML yourself.
+`parse_table` only works on `<table>` markup. For grids made of divs or lists, use [`parse_json`](parse-json.md) with a `data_schema`, or [`capture_element`](capture-element.md) and parse the HTML yourself.

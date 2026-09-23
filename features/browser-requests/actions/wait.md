@@ -19,10 +19,10 @@ The wait action tells the browser to pause for a specified time or until a parti
 ### Parameters
 
 {% hint style="info" %}
-**Parameter Requirements:** You must provide either `time` or `selector`. When using `selector`, `timeout` is required.
+**Parameter Requirements:** You must provide either `time` or `selector`.&#x20;
 {% endhint %}
 
-<table data-full-width="false"><thead><tr><th width="214">Name</th><th width="130">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>time</code></td><td><code>integer</code></td><td>The time in milliseconds the browser should wait.</td></tr><tr><td><code>selector</code></td><td><code>string</code></td><td>The <a href="../selectors.md">selector</a> for the element to wait for. You must provide a <code>timeout</code> when using <code>selector</code>.</td></tr><tr><td><code>timeout</code></td><td><code>integer</code></td><td>The maximum time in milliseconds to wait for <code>selector</code> to appear. Default: 5,000 (5s). Required when using <code>selector</code>.</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="149.085205078125">Name</th><th width="130">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>time</code></td><td><code>integer</code></td><td>The time in milliseconds the browser should wait.</td></tr><tr><td><code>selector</code></td><td><code>string</code></td><td>The <a href="../selectors.md">selector</a> for the element to wait for.</td></tr><tr><td><code>timeout</code></td><td><code>integer</code></td><td>The maximum time in milliseconds to wait for <code>selector</code> to appear. Default: 5,000 (5s). </td></tr></tbody></table>
 
 See [universal parameters](./#universal-parameters).
 
@@ -60,6 +60,18 @@ The following code will wait for a table to appear on the page for up to 5 secon
 ]
 ```
 
+`timeout` is shown explicitly above for clarity, but it isn't required. Leaving it out gives you the same 5-second wait:
+
+```json
+"actions": [
+      {
+        "type": "wait",
+        "selector": "table",
+        "continue_on_fail": true
+      }
+]
+```
+
 {% hint style="warning" %}
 Using both `time` and `selector` + `timeout` together does not result in an error. But note that when both are provided, `time` takes priority and the browser will proceed after the `time` duration expires, regardless of whether `selector` has appeared, and the `timeout` is ignored.
 {% endhint %}
@@ -72,7 +84,7 @@ Use it when you need to pause between actions — waiting for content to load af
 
 #### How do I wait for an element to appear?
 
-Add a wait action with a [`selector`](../selectors.md) for the element and a `timeout` in milliseconds. Gaffa continues as soon as the element appears or when the timeout expires.
+Add a wait action with a [`selector`](../selectors.md) for the element. Gaffa waits up to 5 seconds by default and continues as soon as the element appears, or set `timeout` to change how long it waits.
 
 #### How do I pause for a fixed amount of time?
 
@@ -89,6 +101,10 @@ Wait for a [`selector`](../selectors.md) where you can. It moves on as soon as t
 #### What if the element never appears?
 
 The action fails once the timeout is up, and by default the request stops. Set `continue_on_fail: true` if the element is optional and the rest should still run.
+
+#### Do I need to set a timeout when using selector?
+
+No. `timeout` defaults to 5,000ms if you leave it out. Set it explicitly only when you want a shorter or longer wait than that.&#x20;
 
 #### Do I need a wait before every capture?
 

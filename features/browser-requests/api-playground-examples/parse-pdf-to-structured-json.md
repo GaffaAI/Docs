@@ -22,9 +22,9 @@ The request below uses the [POST endpoint](https://gaffa.dev/docs/api-reference/
   "proxy_location": null,
   "async": false,
   "max_cache_age": 0,
-  "max_media_bandwidth": null,
-  "time_limit": null,
   "settings": {
+    "max_media_bandwidth": null,
+    "time_limit": null,
     "record_request": false,
     "actions": [
       {

@@ -35,7 +35,6 @@ When a browser request has completed, information on an action's execution
 {
     "id": "", //a unique id given to the action by Gaffa
     "type": "capture_screenshot", //the type of the action
-    "query": "", //a representation of the action in querystring format
     "timestamp": "", //the UTC timestamp the action was executed
     "output": "" //if the action has an output, you will find a URL for this here,
     "error": "" //if the request fails, the error message will be returned here

@@ -14,7 +14,7 @@ By the end of this guide, you'll be able to:
 
 * Use Gaffa's [`site/map`](../features/mapping-requests.md) endpoint to discover every page on a site.
 * Render each page with a headless browser to capture its full DOM.
-* Parse and download all images using Gaffa's [`download_file`](../features/browser-requests/actions/download-file.md) action with residential proxies
+* Parse and download all images using Gaffa's [`download_file`](../features/browser-requests/actions/download-file.md) action.
 * Run the process at scale with built-in proxy rotation and caching.
 
 ### Prerequisites
@@ -164,14 +164,13 @@ Save the complete code to a file like `gaffa_scrape_images.py` and run it from y
 python3 gaffa_scrape_images.py
 ```
 
-Sit back and watch as Gaffa automatically discovers, renders, and scrapes every image from the site using proxies and real browsers. The script will create timestamped folders and save all the images there.
+Sit back and watch as Gaffa automatically discovers, renders, and scrapes every image from the site using real browsers. The script will create timestamped folders and save all the images there.
 {% endstep %}
 {% endstepper %}
 
 ### Why This Gaffa-Powered Approach is Superior
 
 * **Handles JavaScript-Rendered Content:** Unlike simple HTTP scrapers, Gaffa uses a real browser, so it captures anything that is lazy-loaded by JavaScript.
-* **Stealth Downloading with Residential Proxies:** The download\_file action uses real browsers and proxies, making your requests appear as legitimate user traffic.
 * **Intelligent Caching:** With \`max\_cache\_age\` set to 24 hours, repeated requests for the same image are served from cache, reducing load on target servers and improving efficiency.
 * **Built-in Reliability:** Gaffa's infrastructure handles proxy rotation, request pacing, retries automatically and provides the correct file format directly.
 * **Respectful Scraping:** Gaffa's infrastructure is designed for responsible automation. Always check a website's robots.txt and terms of service before scraping, and respect reasonable rate limits.

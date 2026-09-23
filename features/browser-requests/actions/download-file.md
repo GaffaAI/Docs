@@ -50,7 +50,6 @@ And the service responds with the file being in the action output:
       {
         "id": "act_VHhrUbXjZSaYCPTqbBYD4acCzzeFGH",
         "type": "download_file",
-        "query": "download_file?continue_on_fail=false&timeout=20000",
         "timestamp": "2025-05-30T15:02:06.6615306Z",
         "output": "https://storage.gaffa.dev/brq/downloads/5845df07-3749-424e-9c64-9602be19a857.pdf"
       }
