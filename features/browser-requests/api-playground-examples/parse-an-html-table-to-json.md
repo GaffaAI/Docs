@@ -76,7 +76,7 @@ The `parse_table` action returns an `output` URL pointing to the extracted JSON:
         "type": "parse_table",
         "query": "parse_table?selector=table",
         "timestamp": "2025-06-09T12:00:01.600Z",
-        "output": "https://storage.gaffa.dev/brq/results/brq_abc123ExampleRequestId/act_parse001_table.json"
+        "output": "https://storage.gaffa.dev/static/docs/parse-html-table/table.json"
       }
     ]
   }

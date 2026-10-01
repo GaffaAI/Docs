@@ -142,7 +142,7 @@ A normal, successful synchronous (`async: false`) request. The full result comes
         "id": "act_VwPWChYYzXX7hatJacEHRcE7rJXyzi",
         "type": "print",
         "timestamp": "2026-09-07T11:11:42.0696721Z",
-        "output": "https://storage.gaffa.dev/brq/pdf/brq_VwPWCbsJV6RFxJM5YKtE63LACZBQMj/act_VwPWChYYzXX7hatJacEHRcE7rJXyzi.pdf"
+        "output": "https://storage.gaffa.dev/static/docs/parameters/print-output.pdf"
       }
     ]
   }

@@ -134,7 +134,7 @@ The parsed data is returned as a structured JSON object matching your schema:
         "id": "act_VugUckntLDEu8uJGcEg2nNPt8W3UM3",
         "type": "download_file",
         "timestamp": "2026-08-17T09:43:51.1202524Z",
-        "output": "https://storage.gaffa.dev/brq/downloads/brq_VugUcjuFPM7ZyrMiRK9L8PzYMuPwhX/ReasoningAboutActionAndChange.pdf"
+        "output": "https://storage.gaffa.dev/static/docs/parse-pdf/ReasoningAboutActionAndChange.pdf"
       },
       {
         "id": "act_VugUco5GmpoqLF1Khu7J9tUjiy3gkW",
@@ -194,7 +194,7 @@ The parsed data is returned as a structured JSON object matching your schema:
             }
           ]
         },
-        "reference": "https://storage.gaffa.dev/brq/downloads/brq_VugUcjuFPM7ZyrMiRK9L8PzYMuPwhX/ReasoningAboutActionAndChange.pdf"
+        "reference": "https://storage.gaffa.dev/static/docs/parse-pdf/ReasoningAboutActionAndChange.pdf"
       }
     ]
   }

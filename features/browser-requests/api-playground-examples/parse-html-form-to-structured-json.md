@@ -186,7 +186,7 @@ The parsed form data is returned as a structured JSON object:
             }
           ]
         },
-        "reference": "https://storage.gaffa.dev/brq/dom/brq_VrwuWctcUAj75jbs5XUFkMbGGeBeLP/act_VrwuWkyuTBi8w3pBaQD98naDi9MvaK_raw.txt"
+        "reference": "https://storage.gaffa.dev/static/docs/parse-html-form/dom-raw.txt"
       }
     ]
   }

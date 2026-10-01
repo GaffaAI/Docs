@@ -241,7 +241,7 @@ The loop is returned as a single action containing an `iterations` count and a n
       "type": "capture_dom",
       "custom_id": "page-html",
       "timestamp": "2026-08-11T09:51:20.4515024Z",
-      "output": "https://storage.gaffa.dev/brq/dom/brq_VuCHkdpZFrk6SaFnb3Zxw8iskoGaKt/act_VuCHmS83cSrkua3Wo6wWqCUocE3yZA_raw.txt"
+      "output": "https://storage.gaffa.dev/static/docs/loop-action/page-1-dom-raw.txt"
     },
     {
       "id": "act_VuCHmSdCjKQ3DSrooqFUp5EHNk6fTh",
@@ -260,7 +260,7 @@ The loop is returned as a single action containing an `iterations` count and a n
       "type": "capture_dom",
       "custom_id": "page-html",
       "timestamp": "2026-08-11T09:51:24.1206194Z",
-      "output": "https://storage.gaffa.dev/brq/dom/brq_VuCHkdpZFrk6SaFnb3Zxw8iskoGaKt/act_VuCHnE6Z1TkdTE8UBGyyxgn26nauAB_raw.txt"
+      "output": "https://storage.gaffa.dev/static/docs/loop-action/page-2-dom-raw.txt"
     },
     {
       "id": "act_VuCHnJVQ3etENxshyaUeHTNqZzem4N",

@@ -66,7 +66,7 @@ Replace YOUR\_API\_KEY with your actual token from your [Dashboard.](https://gaf
 
 1. **Wait** (optional): Detect and accept Wikipedia’s cookie banner if it appears. If it fails, that simply means no banner was present, or it did not load in time. Since continue\_on\_fail defaults to true, Gaffa will continue without halting the workflow, ensuring the remaining steps still execute.
 2. **Wait**: Ensure the main heading (#firstHeading) is loaded.
-3. **Scroll**: Scroll through the entire page to trigger any lazy-loaded content.&#x20;
+3. **Scroll**: Scroll through the entire page to trigger any lazy-loaded content.
 4. **Capture** Screenshot: Produce a full-page PNG.
 {% endstep %}
 
@@ -122,7 +122,7 @@ A successful response returns JSON like:
         "type": "capture_screenshot",
         "query": "capture_screenshot?size=fullscreen&continue_on_fail=false",
         "timestamp": "2025-06-09T15:56:20.0727905Z",
-        "output": "https://storage.gaffa.dev/brq/image/brq_VJX3mbESLiyCFYvZQEUih9RdDYovog/act_VJX3mjBQYv8zTsXv1SkgUnBkzNFmJU_full.png"
+        "output": "https://storage.gaffa.dev/static/docs/full-height-screenshot/screenshot-full.png"
       }
     ]
   },
