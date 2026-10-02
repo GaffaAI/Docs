@@ -88,7 +88,7 @@ def fetch_markdown_with_gaffa(url):
 
 ### Ask questions using OpenAI
 
-Now that we have the markdown content, we can ask questions about it using the OpenAI API. The function below takes markdown content and a question as input, then uses the OpenAI API to generate a summary based on the provided content. In this case, we are using the [gpt-3.5-turbo](https://platform.openai.com/docs/models) model, but you can choose any other model.
+Now that we have the markdown content, we can ask questions about it using the OpenAI API. The function below takes markdown content and a question as input, then uses the OpenAI API to generate a summary based on the provided content. In this case, we are using the [`gpt-4o-mini`](https://platform.openai.com/docs/models) model, but you can choose any other model.
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```python

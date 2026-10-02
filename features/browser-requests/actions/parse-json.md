@@ -110,7 +110,7 @@ Instead of defining schemas inline each time, you can save them to your Gaffa ac
 
 #### Creating a Saved Schema
 
-Use the [POST /v1/schemas](https://gaffa.dev/docs/api-reference/post-v1-schemas) endpoint to create a reusable schema:
+Use the [POST /v1/schemas](../../../api-reference/post-v1-schemas.md) endpoint to create a reusable schema:
 
 ```bash
 curl -L \
@@ -189,7 +189,7 @@ Save the `id` returned in the response, you'll use this to reference the schema 
 
 Allows you to view all schemas saved to your account:
 
-Endpoint: [GET /v1/schemas](https://gaffa.dev/docs/api-reference/get-v1-schemas)
+Endpoint: [GET /v1/schemas](../../../api-reference/get-v1-schemas.md)
 
 ```bash
 curl -L \
@@ -202,7 +202,7 @@ curl -L \
 
 Allows you to modify an existing schema by its ID:
 
-Endpoint: [PUT /v1/schemas](https://gaffa.dev/docs/api-reference/put-v1-schemas)
+Endpoint: [PUT /v1/schemas{id}](../../../api-reference/put-v1-schemas.md)
 
 ```bash
 curl -L \
@@ -238,7 +238,7 @@ curl -L \
 
 Removes a schema from your account:
 
-Endpoint: [DELETE /v1/schemas/:id](https://gaffa.dev/docs/api-reference/delete-v1-schemas-id)
+Endpoint: [DELETE /v1/schemas/{id}](../../../api-reference/delete-v1-schemas-id.md)
 
 ```bash
 curl -L \

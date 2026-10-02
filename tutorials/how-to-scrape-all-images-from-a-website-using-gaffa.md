@@ -95,7 +95,7 @@ def get_dom(url):
 
 **Extract Images and Download with Gaffa**
 
-With the real HTML in hand, we extract image URLs using a simple regex pattern and use Gaffa's [`download_file`](../features/browser-requests/actions/download-file.md) action for secure, reliable downloads. This also allows us to use caching, which avoids downloading the same image over and over again and putting a load on the target server.
+With the real HTML in hand, we extract image URLs using a simple regex pattern and use Gaffa's [`download_file`](../features/browser-requests/actions/download-file.md) action for secure, reliable downloads. Gaffa handles the download for us, so we get a storage URL for the file instead of fetching it from the target site ourselves.
 
 ```python
 def extract_image_urls(dom_content, base_url):
@@ -164,16 +164,16 @@ Save the complete code to a file like `gaffa_scrape_images.py` and run it from y
 python3 gaffa_scrape_images.py
 ```
 
-Sit back and watch as Gaffa automatically discovers, renders, and scrapes every image from the site using real browsers. The script will create timestamped folders and save all the images there.
+Sit back and watch as Gaffa automatically discovers, renders, and scrapes every image from the site using real browsers. The script saves one image from each of the first three pages as `image_1`, `image_2` and `image_3`, with the correct file extension, in the folder you ran it from.
 {% endstep %}
 {% endstepper %}
 
 ### Why This Gaffa-Powered Approach is Superior
 
 * **Handles JavaScript-Rendered Content:** Unlike simple HTTP scrapers, Gaffa uses a real browser, so it captures anything that is lazy-loaded by JavaScript.
-* **Intelligent Caching:** With \`max\_cache\_age\` set to 24 hours, repeated requests for the same image are served from cache, reducing load on target servers and improving efficiency.
+* **Intelligent Caching:** With `max_cache_age` set to 24 hours, repeated sitemap requests for the same site are served from cache, reducing load on target servers and improving efficiency.
 * **Built-in Reliability:** Gaffa's infrastructure handles proxy rotation, request pacing, retries automatically and provides the correct file format directly.
-* **Respectful Scraping:** Gaffa's infrastructure is designed for responsible automation. Always check a website's robots.txt and terms of service before scraping, and respect reasonable rate limits.
+* **Respectful Scraping:** Gaffa's infrastructure is designed for responsible automation. Always check a website's `robots.txt` and terms of service before scraping, and respect reasonable rate limits.
 
 ### Use Cases and Ideas
 
@@ -181,7 +181,7 @@ This technique is useful for far more than just downloading pictures. Here are a
 
 * **Competitive Analysis**: Analyze competitors' product photography styles using real browsers.
 * **AI/ML Datasets**: Build large, curated image datasets for training computer vision models using ethically sourced images.
-* **Website Migration & Audits**: Download all assets from an old site before a migration while minimizing server impact through caching.
+* **Website Migration & Audits**: Download all assets from an old site before a migration.
 * **Archival & Documentation**: Preserve visual evidence for journalism or create backups of a site's visual content using proxies for access.
 
 #### Next Steps

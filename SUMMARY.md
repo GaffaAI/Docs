@@ -51,7 +51,7 @@
 * [GET v1/browser/requests/{id}](api-reference/get-v1-browser-requests-id.md)
 * [GET v1/browser/requests](api-reference/get-v1-browser-requests.md)
 * [POST v1/schemas](api-reference/post-v1-schemas.md)
-* [PUT v1/schemas](api-reference/put-v1-schemas.md)
+* [PUT v1/schemas{id}](api-reference/put-v1-schemas.md)
 * [GET v1/schemas](api-reference/get-v1-schemas.md)
 * [DELETE v1/schemas/{id}](api-reference/delete-v1-schemas-id.md)
 * [POST v1/site/map](api-reference/post-v1-site-map.md)

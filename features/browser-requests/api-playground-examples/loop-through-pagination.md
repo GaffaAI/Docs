@@ -76,7 +76,7 @@ The request below uses the [POST endpoint](../../../api-reference/post-v1-browse
 
 ### Response
 
-The [`loop`](../actions/loop.md) action's nested actions run once per page and are returned as a single flat array, in execution order, with an `iterations` count on the loop action itself showing how many pages were captured before the click failed (i.e. the last "next page" button was gone) or the iteration cap was reached:
+The [`loop`](../actions/loop.md) is returned as a single action. Its nested actions from every iteration are listed in execution order in the loop entry's own actions array, and the `iterations` count on the loop entry shows how many times the loop ran. On the last page, the click for the next page can't find its button, so it fails with `action_timed_out` and the loop ends. Because the loop has `continue_on_fail: true`, the request still completes:
 
 ```json
 {
@@ -84,6 +84,7 @@ The [`loop`](../actions/loop.md) action's nested actions run once per page and a
     "id": "brq_...",
     "url": "https://demo.gaffa.dev/simulate/ecommerce?...&page=1",
     "state": "completed",
+    "actual_url": "https://demo.gaffa.dev/simulate/ecommerce?...&page=5",
     "actions": [
       { "id": "act_...", "type": "wait", "timestamp": "..." },
       {
@@ -91,17 +92,18 @@ The [`loop`](../actions/loop.md) action's nested actions run once per page and a
         "type": "loop",
         "custom_id": "pagination-loop",
         "iterations": 5,
-        "timestamp": "..."
-      },
-      { "id": "act_...", "type": "wait", "custom_id": "settle", "timestamp": "..." },
-      { "id": "act_...", "type": "capture_dom", "custom_id": "page-dom", "output": "...", "timestamp": "..." },
-      { "id": "act_...", "type": "capture_screenshot", "output": "https://storage.gaffa.dev/...", "timestamp": "..." },
-      { "id": "act_...", "type": "click", "custom_id": "next-page", "timestamp": "..." }
-      // ...repeated for each of the 5 iterations
+        "actions": [
+          { "id": "act_...", "type": "wait", "custom_id": "settle", "timestamp": "..." },
+          { "id": "act_...", "type": "capture_dom", "custom_id": "page-dom", "output": "https://storage.gaffa.dev/...", "timestamp": "..." },
+          { "id": "act_...", "type": "capture_screenshot", "output": "https://storage.gaffa.dev/...", "timestamp": "..." },
+          { "id": "act_...", "type": "click", "custom_id": "next-page", "timestamp": "..." }
+          // ...repeated for each of the 5 iterations. On the last one, the click
+          // has "error": "action_timed_out" because there is no next page.
+        ]
+      }
     ]
   }
 }
-
 ```
 
 ## Next Button Pagination
@@ -114,42 +116,65 @@ The request below uses the [POST endpoint](../../../api-reference/post-v1-browse
 
 ```json
 {
- "url": "https://demo.gaffa.dev/simulate/ecommerce?loadTime=1&showModal=true&modalDelay=1&loadingMode=paged&pagingStyle=next&pageCount=3&pageSize=3&itemCount=30&itemLoadTime=0&isVirtualScroll=true&page=1",
- "async": false,
- "max_cache_age": 0,
- "settings": {
-   "time_limit": 30000,
-   "record_request": true,
-   "actions": [
-     { "type": "wait", "selector": "div[role=\"dialog\"]", "timeout": 8000, "continue_on_fail": true },
-     { "type": "click", "selector": "[data-testid=\"accept-all-button\"]", "timeout": 5000, "continue_on_fail": true },
-     { "type": "wait", "selector": "[data-testid=\"product-1\"]", "timeout": 10000 },
-     {
-       "type": "loop",
-       "custom_id": "pagination-loop",
-       "max_iterations": 3,
-       "timeout": 20000,
-       "stop_on_fail": true,
-       "continue_on_fail": true,
-       "actions": [
-         { "type": "wait", "time": 500, "custom_id": "settle" },
-         { "type": "capture_dom", "custom_id": "page-dom" },
-         {
-           "type": "click",
-           "selector": "button:has-text('Next page')",
-           "timeout": 5000,
-           "custom_id": "next-page"
-         }
-       ]
-     }
-   ]
- }
+  "url": "https://demo.gaffa.dev/simulate/ecommerce?loadTime=1&showModal=true&modalDelay=1&loadingMode=paged&pagingStyle=next&pageCount=3&pageSize=3&itemCount=30&itemLoadTime=0&isVirtualScroll=true&page=1",
+  "proxy_location": null,
+  "async": false,
+  "max_cache_age": 0,
+  "settings": {
+    "record_request": true,
+    "max_media_bandwidth": null,
+    "time_limit": 30000,
+    "actions": [
+      {
+        "type": "wait",
+        "selector": "div[role=\"dialog\"]",
+        "timeout": 8000,
+        "continue_on_fail": true
+      },
+      {
+        "type": "click",
+        "selector": "[data-testid=\"accept-all-button\"]",
+        "timeout": 5000,
+        "continue_on_fail": true
+      },
+      {
+        "type": "wait",
+        "selector": "[data-testid=\"product-1\"]",
+        "timeout": 10000
+      },
+      {
+        "type": "loop",
+        "custom_id": "pagination-loop",
+        "max_iterations": 3,
+        "timeout": 20000,
+        "stop_on_fail": true,
+        "continue_on_fail": true,
+        "actions": [
+          {
+            "type": "wait",
+            "time": 500,
+            "custom_id": "settle"
+          },
+          {
+            "type": "capture_dom",
+            "custom_id": "page-dom"
+          },
+          {
+            "type": "click",
+            "selector": "button:has-text('Next page')",
+            "timeout": 5000,
+            "custom_id": "next-page"
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
 ### Response
 
-As with the numbered pagination example, the loop's nested actions are flattened into the response's `actions` array in execution order, once per page:
+As with the numbered pagination example, the loop's nested actions are listed in the loop entry's own actions array, in execution order, once per page. The actions before the loop stay at the top level of actions. On the last page, the "Next page" click fails with `action_timed_out` and the loop ends, and because the loop has `continue_on_fail: true`, the request still completes:
 
 ```json
 {
@@ -157,6 +182,7 @@ As with the numbered pagination example, the loop's nested actions are flattened
     "id": "brq_...",
     "url": "https://demo.gaffa.dev/simulate/ecommerce?...&page=1",
     "state": "completed",
+    "actual_url": "https://demo.gaffa.dev/simulate/ecommerce?...&page=3",
     "actions": [
       { "id": "act_...", "type": "wait", "timestamp": "..." },
       { "id": "act_...", "type": "click", "timestamp": "..." },
@@ -166,12 +192,14 @@ As with the numbered pagination example, the loop's nested actions are flattened
         "type": "loop",
         "custom_id": "pagination-loop",
         "iterations": 3,
-        "timestamp": "..."
-      },
-      { "id": "act_...", "type": "wait", "custom_id": "settle", "timestamp": "..." },
-      { "id": "act_...", "type": "capture_dom", "custom_id": "page-dom", "output": "...", "timestamp": "..." },
-      { "id": "act_...", "type": "click", "custom_id": "next-page", "timestamp": "..." }
-      // ...repeated for each of the 3 iterations
+        "actions": [
+          { "id": "act_...", "type": "wait", "custom_id": "settle", "timestamp": "..." },
+          { "id": "act_...", "type": "capture_dom", "custom_id": "page-dom", "output": "https://storage.gaffa.dev/...", "timestamp": "..." },
+          { "id": "act_...", "type": "click", "custom_id": "next-page", "timestamp": "..." }
+          // ...repeated for each of the 3 iterations. On the last one, the click
+          // has "error": "action_timed_out" because there is no next page.
+        ]
+      }
     ]
   }
 }
@@ -187,41 +215,70 @@ The request below uses the [POST endpoint](../../../api-reference/post-v1-browse
 
 ```json
 {
- "url": "https://demo.gaffa.dev/simulate/ecommerce?loadTime=1&showModal=true&modalDelay=1&loadingMode=paged&pagingStyle=show-more&pageCount=4&pageSize=10&itemCount=40&itemLoadTime=0&isVirtualScroll=false&page=1",
- "async": false,
- "max_cache_age": 0,
- "settings": {
-   "time_limit": 45000,
-   "record_request": true,
-   "actions": [
-     { "type": "wait", "selector": "div[role=\"dialog\"]", "timeout": 8000, "continue_on_fail": true },
-     { "type": "click", "selector": "[data-testid=\"accept-all-button\"]", "timeout": 5000, "continue_on_fail": true },
-     { "type": "wait", "selector": "[data-testid=\"product-1\"]", "timeout": 10000 },
-     {
-       "type": "loop",
-       "custom_id": "showmore-loop",
-       "max_iterations": 4,
-       "timeout": 35000,
-       "stop_on_fail": true,
-       "continue_on_fail": true,
-       "actions": [
-         { "type": "wait", "time": 500, "custom_id": "settle" },
-         { "type": "capture_dom", "custom_id": "page-dom" },
-         { "type": "capture_screenshot", "custom_id": "page-screenshot" },
-         {
-           "type": "click",
-           "selector": "button:has-text('Show more')",
-           "timeout": 5000,
-           "custom_id": "show-more"
-         }
-       ]
-     }
-   ]
- }
+  "url": "https://demo.gaffa.dev/simulate/ecommerce?loadTime=1&showModal=true&modalDelay=1&loadingMode=paged&pagingStyle=show-more&pageCount=4&pageSize=10&itemCount=40&itemLoadTime=0&isVirtualScroll=false&page=1",
+  "proxy_location": null,
+  "async": false,
+  "max_cache_age": 0,
+  "settings": {
+    "record_request": true,
+    "max_media_bandwidth": null,
+    "time_limit": 45000,
+    "actions": [
+      {
+        "type": "wait",
+        "selector": "div[role=\"dialog\"]",
+        "timeout": 8000,
+        "continue_on_fail": true
+      },
+      {
+        "type": "click",
+        "selector": "[data-testid=\"accept-all-button\"]",
+        "timeout": 5000,
+        "continue_on_fail": true
+      },
+      {
+        "type": "wait",
+        "selector": "[data-testid=\"product-1\"]",
+        "timeout": 10000
+      },
+      {
+        "type": "loop",
+        "custom_id": "showmore-loop",
+        "max_iterations": 4,
+        "timeout": 35000,
+        "stop_on_fail": true,
+        "continue_on_fail": true,
+        "actions": [
+          {
+            "type": "wait",
+            "time": 500,
+            "custom_id": "settle"
+          },
+          {
+            "type": "capture_dom",
+            "custom_id": "page-dom"
+          },
+          {
+            "type": "capture_screenshot",
+            "size": "fullscreen",
+            "custom_id": "page-screenshot"
+          },
+          {
+            "type": "click",
+            "selector": "button:has-text('Show more')",
+            "timeout": 5000,
+            "custom_id": "show-more"
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
 ### Response
+
+As with the other pagination examples, the loop's nested actions are listed in the loop entry's own actions array, in execution order, once per page. On the last page the "Show more" button is gone, so the click fails with `action_timed_out` and the loop ends. Because the loop has `continue_on_fail: true`, the request still completes:
 
 ```json
 {
@@ -229,6 +286,7 @@ The request below uses the [POST endpoint](../../../api-reference/post-v1-browse
     "id": "brq_...",
     "url": "https://demo.gaffa.dev/simulate/ecommerce?...&page=1",
     "state": "completed",
+    "actual_url": "https://demo.gaffa.dev/simulate/ecommerce?...&page=4",
     "actions": [
       { "id": "act_...", "type": "wait", "timestamp": "..." },
       { "id": "act_...", "type": "click", "timestamp": "..." },
@@ -238,13 +296,15 @@ The request below uses the [POST endpoint](../../../api-reference/post-v1-browse
         "type": "loop",
         "custom_id": "showmore-loop",
         "iterations": 4,
-        "timestamp": "..."
-      },
-      { "id": "act_...", "type": "wait", "custom_id": "settle", "timestamp": "..." },
-      { "id": "act_...", "type": "capture_dom", "custom_id": "page-dom", "output": "...", "timestamp": "..." },
-      { "id": "act_...", "type": "capture_screenshot", "custom_id": "page-screenshot", "output": "https://storage.gaffa.dev/...", "timestamp": "..." },
-      { "id": "act_...", "type": "click", "custom_id": "show-more", "timestamp": "..." }
-      // ...repeated for each of the 4 iterations
+        "actions": [
+          { "id": "act_...", "type": "wait", "custom_id": "settle", "timestamp": "..." },
+          { "id": "act_...", "type": "capture_dom", "custom_id": "page-dom", "output": "https://storage.gaffa.dev/...", "timestamp": "..." },
+          { "id": "act_...", "type": "capture_screenshot", "custom_id": "page-screenshot", "output": "https://storage.gaffa.dev/...", "timestamp": "..." },
+          { "id": "act_...", "type": "click", "custom_id": "show-more", "timestamp": "..." }
+          // ...repeated for each of the 4 iterations. On the last one, the click
+          // has "error": "action_timed_out" because there is no more to show.
+        ]
+      }
     ]
   }
 }

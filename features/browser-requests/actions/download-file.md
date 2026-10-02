@@ -12,7 +12,7 @@ Request a copy of the most recently viewed file in the browser.
 * It works whether the file downloads automatically when the page loads or is triggered by an earlier action, such as a [`click`](click.md).
 * It returns the most recent download, so add a `download_file` action for each file if you're expecting several.
 * Set a `timeout` long enough for the file to finish downloading. Larger files need longer, and the action waits until that limit is reached.
-* Check your file type is supported: **.pdf, .jpg, .png, .gif, .bmp, .webp, .svg, .tiff, .tif** and **.img.**
+* Check your file type is supported: **.pdf, .jpg, .jpeg, .png, .gif, .bmp, .webp, .svg, .tiff, .tif** and **.img.**
 * Each `download_file` action collects a file, which is then consumed. Add one action per file you're expecting.
 * Don't add more `download_file` actions than there are files. Any extras will wait out their timeout and fail.
 
@@ -68,7 +68,7 @@ Point the browser request to the PDF's URL and add a `download_file` action with
 
 #### Which file types does the download\_file action support?
 
-It supports **.pdf, .jpg, .png, .gif, .bmp, .webp, .svg, .tiff, .tif** and **.img**. Other file types can't be downloaded with this action.
+It supports **.pdf, .jpg, .jpeg, .png, .gif, .bmp, .webp, .svg, .tiff, .tif** and **.img**. Other file types can't be downloaded with this action.
 
 #### What timeout should I set for the download\_file action?
 
