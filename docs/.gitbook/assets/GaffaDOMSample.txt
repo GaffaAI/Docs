@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/_next/static/css/c36ae21e62020205.css" data-precedence="next">
+		<link rel="stylesheet" href="/_next/static/css/8fcbe8d5a8bc94e8.css" data-precedence="next">
+		<link rel="preload" as="script" fetchpriority="low" href="/_next/static/chunks/webpack-84b3afd4eafaae55.js">
+		<script src="/_next/static/chunks/fd9d1056-c176ba62bfa905c4.js" async=""></script>
+		<script src="/_next/static/chunks/23-10c2db4252495822.js" async=""></script>
+		<script src="/_next/static/chunks/main-app-18d6c32ccf473ce7.js" async=""></script>
+		<script src="/_next/static/chunks/969-00d12df27ccfa810.js" async=""></script>
+		<script src="/_next/static/chunks/173-2698ba80205e683d.js" async=""></script>
+		<script src="/_next/static/chunks/883-95410df1c930f499.js" async=""></script>
+		<script src="/_next/static/chunks/app/simulate/article/page-6b1f153a37e7e749.js" async=""></script>
+		<title>Simulate - Custom Layout</title>
+		<meta name="description" content="Custom layout for the simulate folder">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16">
+		<script src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js" nomodule=""></script>
+	</head>
+	<body>
+		<script src="/_next/static/chunks/webpack-84b3afd4eafaae55.js" async=""></script>
+		<script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script>
+		<script>self.__next_f.push([1,"1:HL[\"/_next/static/css/c36ae21e62020205.css\",\"style\"]\n2:HL[\"/_next/static/css/8fcbe8d5a8bc94e8.css\",\"style\"]\n"])</script>
+		<script>self.__next_f.push([1,"3:I[5751,[],\"\"]\n5:I[6513,[],\"ClientPageRoot\"]\n6:I[1781,[\"969\",\"static/chunks/969-00d12df27ccfa810.js\",\"173\",\"static/chunks/173-2698ba80205e683d.js\",\"883\",\"static/chunks/883-95410df1c930f499.js\",\"160\",\"static/chunks/app/simulate/article/page-6b1f153a37e7e749.js\"],\"default\",1]\n7:I[9275,[],\"\"]\n8:I[1343,[],\"\"]\n9:\"$Sreact.suspense\"\nb:I[6130,[],\"\"]\nc:[]\n"])</script>
+		<script>self.__next_f.push([1,"0:[\"$\",\"$L3\",null,{\"buildId\":\"mh6Nqv-zzM3Fc9xyP10_H\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"simulate\",\"article\"],\"initialTree\":[\"\",{\"children\":[\"simulate\",{\"children\":[\"article\",{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"simulate\",{\"children\":[\"article\",{\"children\":[\"__PAGE__\",{},[[\"$L4\",[\"$\",\"$L5\",null,{\"props\":{\"params\":{},\"searchParams\":{}},\"Component\":\"$6\"}],null],null],null]},[null,[\"$\",\"$L7\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"simulate\",\"children\",\"article\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L8\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[null,[\"$\",\"$9\",null,{\"fallback\":[\"$\",\"div\",null,{\"className\":\"text-center py-8\",\"children\":\"Loading...\"}],\"children\":[\"$\",\"$L7\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"simulate\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L8\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]}]],null],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/c36ae21e62020205.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/8fcbe8d5a8bc94e8.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"children\":[\"$\",\"$L7\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L8\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$La\"],\"globalErrorComponent\":\"$b\",\"missingSlots\":\"$Wc\"}]\n"])</script>
+		<script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Simulate - Custom Layout\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Custom layout for the simulate folder\"}],[\"$\",\"link\",\"4\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}]]\n4:null\n"])</script>
+		<next-route-announcer style="position: absolute;"></next-route-announcer>
+		<div class="container mx-auto py-8 px-4">
+			<h1 class="text-3xl font-bold mb-4 text-center font-jetbrains">Article</h1>
+			<p class="text-center mb-8 max-w-2xl mx-auto">This page simulates an article with 10 paragraphs and 3 images. It loads after 3 seconds. You can change these parameters in the URL.</p>
+			<article class="max-w-3xl mx-auto">
+				<div class="mb-8">
+					<h1 class="text-4xl font-bold mb-4">ex eiusmod laborum enim esse</h1>
+					<div class="flex items-center text-gray-600">
+						<img alt="laboris dolor" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" class="rounded-full mr-4" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Flaboris%20dolor%2F50%2F50&amp;w=64&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Flaboris%20dolor%2F50%2F50&amp;w=128&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Flaboris%20dolor%2F50%2F50&amp;w=128&amp;q=75" style="color: transparent;">
+						<div>
+							<p class="font-semibold">laboris dolor</p>
+							<p>November 27, 2024</p>
+						</div>
+					</div>
+				</div>
+				<div class="mb-8">
+					<img alt="Header image" loading="lazy" width="800" height="400" decoding="async" data-nimg="1" class="w-full h-auto rounded-lg" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fex%20eiusmod%20laborum%20enim%20esse%2F800%2F400&amp;w=828&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fex%20eiusmod%20laborum%20enim%20esse%2F800%2F400&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fex%20eiusmod%20laborum%20enim%20esse%2F800%2F400&amp;w=1920&amp;q=75" style="color: transparent;">
+				</div>
+				<p class="mb-4">Deserunt incididunt excepteur voluptate minim occaecat Lorem sit aliqua ipsum duis sunt in velit Lorem. Ad laboris voluptate consequat consequat nostrud elit aute officia commodo ipsum aute et reprehenderit proident. Quis qui non consequat qui consectetur. Ut et laboris esse quis et incididunt nisi. Velit cupidatat elit ut cupidatat. Esse cillum id voluptate nostrud tempor fugiat.</p>
+				<p class="mb-4">Deserunt laboris enim qui adipisicing sunt tempor cupidatat. Cillum esse nostrud est enim voluptate. Eiusmod minim nostrud irure deserunt Lorem aliquip do laboris proident nisi excepteur officia. Proident est excepteur do veniam id anim ad anim enim in esse cupidatat. Reprehenderit velit laboris cillum irure aliquip excepteur est ullamco. Nulla exercitation ut incididunt aliquip cillum reprehenderit occaecat occaecat fugiat velit nisi. Id consectetur anim voluptate. Do commodo anim duis ea velit est incididunt voluptate enim.</p>
+				<p class="mb-4">Sint eiusmod reprehenderit sit anim sit eu in aliquip tempor adipisicing ad amet incididunt. Quis tempor magna quis. Labore nulla magna labore ut sit occaecat irure excepteur sint. Non fugiat nulla Lorem. Eu nostrud laborum aute Lorem ut cupidatat excepteur Lorem voluptate id. Non id in occaecat laborum adipisicing fugiat nulla anim do aliquip commodo.</p>
+				<p class="mb-4">Et ut ad pariatur proident. Occaecat incididunt id excepteur est incididunt irure exercitation. Dolore mollit aute pariatur tempor culpa ad irure nisi consequat laborum enim sint. Qui aliquip enim eu laborum ad cupidatat laboris ut amet irure ad.</p>
+				<div class="my-8">
+					<img alt="Article image 1" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" class="w-full h-auto rounded-lg" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F3%2F600%2F400&amp;w=640&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F3%2F600%2F400&amp;w=1200&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F3%2F600%2F400&amp;w=1200&amp;q=75" style="color: transparent;">
+					<p class="text-sm text-gray-600 mt-2">Officia tempor aliquip duis quis elit sit pariatur cupidatat mollit culpa eiusmod laborum.</p>
+				</div>
+				<p class="mb-4">Tempor et ut magna elit. Incididunt labore sint elit laboris excepteur qui id. Fugiat excepteur excepteur ut aute elit. Reprehenderit minim cupidatat cillum eiusmod commodo ad magna nostrud nostrud enim adipisicing ea et nisi.</p>
+				<p class="mb-4">Ut sit officia aliqua irure labore sunt Lorem amet excepteur ex veniam eiusmod nulla magna. Amet nostrud voluptate ex aliqua nulla enim mollit minim mollit mollit nostrud eiusmod enim tempor eu. Tempor ut nisi incididunt id sint ut. Velit est fugiat ipsum amet qui.</p>
+				<p class="mb-4">Esse mollit dolor labore irure sunt quis irure ut. Lorem veniam reprehenderit deserunt exercitation officia. Non irure ut duis commodo elit sint est. Voluptate reprehenderit magna esse laborum ullamco laboris.</p>
+				<div class="my-8">
+					<img alt="Article image 2" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" class="w-full h-auto rounded-lg" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F6%2F600%2F400&amp;w=640&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F6%2F600%2F400&amp;w=1200&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F6%2F600%2F400&amp;w=1200&amp;q=75" style="color: transparent;">
+					<p class="text-sm text-gray-600 mt-2">Anim do in ullamco cupidatat.</p>
+				</div>
+				<p class="mb-4">Laborum et laboris eu ex anim velit aliquip qui ullamco commodo nostrud. Deserunt ad aute nisi in labore amet consectetur cillum occaecat esse sint. Elit est fugiat excepteur id reprehenderit nostrud pariatur proident. Sunt aliquip est et proident adipisicing ex enim nisi occaecat. Dolore consequat ut qui voluptate reprehenderit cillum veniam ea ad consequat non ullamco do veniam amet.</p>
+				<p class="mb-4">Sint exercitation aliquip dolore. In dolor culpa est ipsum do. Cillum velit adipisicing nostrud. Irure tempor ipsum et cupidatat amet incididunt. Ut nulla mollit esse excepteur ullamco voluptate elit aliqua labore enim magna laboris et est.</p>
+				<p class="mb-4">Nisi eu incididunt exercitation ipsum proident laborum ad est labore sint. Tempor nostrud mollit ipsum cillum eu deserunt deserunt elit cupidatat excepteur dolore do id. Labore exercitation eiusmod eu minim do velit ex. Ullamco laborum est eu magna minim ex eiusmod enim tempor occaecat fugiat nostrud. Fugiat sint et dolore exercitation in adipisicing est consectetur dolor. Ea laborum ex aliquip enim ipsum labore nostrud pariatur laboris eiusmod amet ullamco.</p>
+				<div class="my-8">
+					<img alt="Article image 3" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" class="w-full h-auto rounded-lg" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F9%2F600%2F400&amp;w=640&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F9%2F600%2F400&amp;w=1200&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F9%2F600%2F400&amp;w=1200&amp;q=75" style="color: transparent;">
+					<p class="text-sm text-gray-600 mt-2">Laboris laboris magna excepteur irure aliqua ea in voluptate officia.</p>
+				</div>
+			</article>
+		</div>
+	</body>
+</html>

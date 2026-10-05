@@ -1,0 +1,49 @@
+<html lang="en"><head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Simulate - Custom Layout</title>
+		<meta name="description" content="Custom layout for the simulate folder">
+	</head>
+	<body>
+		<next-route-announcer></next-route-announcer>
+		<div>
+			<h1>Article</h1>
+			<p>This page simulates an article with 10 paragraphs and 3 images. It loads after 3 seconds. You can change these parameters in the URL.</p>
+			<article>
+				<div>
+					<h1>ex eiusmod laborum enim esse</h1>
+					<div>
+						<img alt="laboris dolor" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Flaboris%20dolor%2F50%2F50&amp;w=64&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Flaboris%20dolor%2F50%2F50&amp;w=128&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Flaboris%20dolor%2F50%2F50&amp;w=128&amp;q=75">
+						<div>
+							<p>laboris dolor</p>
+							<p>November 27, 2024</p>
+						</div>
+					</div>
+				</div>
+				<div>
+					<img alt="Header image" loading="lazy" width="800" height="400" decoding="async" data-nimg="1" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fex%20eiusmod%20laborum%20enim%20esse%2F800%2F400&amp;w=828&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fex%20eiusmod%20laborum%20enim%20esse%2F800%2F400&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fex%20eiusmod%20laborum%20enim%20esse%2F800%2F400&amp;w=1920&amp;q=75">
+				</div>
+				<p>Deserunt incididunt excepteur voluptate minim occaecat Lorem sit aliqua ipsum duis sunt in velit Lorem. Ad laboris voluptate consequat consequat nostrud elit aute officia commodo ipsum aute et reprehenderit proident. Quis qui non consequat qui consectetur. Ut et laboris esse quis et incididunt nisi. Velit cupidatat elit ut cupidatat. Esse cillum id voluptate nostrud tempor fugiat.</p>
+				<p>Deserunt laboris enim qui adipisicing sunt tempor cupidatat. Cillum esse nostrud est enim voluptate. Eiusmod minim nostrud irure deserunt Lorem aliquip do laboris proident nisi excepteur officia. Proident est excepteur do veniam id anim ad anim enim in esse cupidatat. Reprehenderit velit laboris cillum irure aliquip excepteur est ullamco. Nulla exercitation ut incididunt aliquip cillum reprehenderit occaecat occaecat fugiat velit nisi. Id consectetur anim voluptate. Do commodo anim duis ea velit est incididunt voluptate enim.</p>
+				<p>Sint eiusmod reprehenderit sit anim sit eu in aliquip tempor adipisicing ad amet incididunt. Quis tempor magna quis. Labore nulla magna labore ut sit occaecat irure excepteur sint. Non fugiat nulla Lorem. Eu nostrud laborum aute Lorem ut cupidatat excepteur Lorem voluptate id. Non id in occaecat laborum adipisicing fugiat nulla anim do aliquip commodo.</p>
+				<p>Et ut ad pariatur proident. Occaecat incididunt id excepteur est incididunt irure exercitation. Dolore mollit aute pariatur tempor culpa ad irure nisi consequat laborum enim sint. Qui aliquip enim eu laborum ad cupidatat laboris ut amet irure ad.</p>
+				<div>
+					<img alt="Article image 1" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F3%2F600%2F400&amp;w=640&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F3%2F600%2F400&amp;w=1200&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F3%2F600%2F400&amp;w=1200&amp;q=75">
+					<p>Officia tempor aliquip duis quis elit sit pariatur cupidatat mollit culpa eiusmod laborum.</p>
+				</div>
+				<p>Tempor et ut magna elit. Incididunt labore sint elit laboris excepteur qui id. Fugiat excepteur excepteur ut aute elit. Reprehenderit minim cupidatat cillum eiusmod commodo ad magna nostrud nostrud enim adipisicing ea et nisi.</p>
+				<p>Ut sit officia aliqua irure labore sunt Lorem amet excepteur ex veniam eiusmod nulla magna. Amet nostrud voluptate ex aliqua nulla enim mollit minim mollit mollit nostrud eiusmod enim tempor eu. Tempor ut nisi incididunt id sint ut. Velit est fugiat ipsum amet qui.</p>
+				<p>Esse mollit dolor labore irure sunt quis irure ut. Lorem veniam reprehenderit deserunt exercitation officia. Non irure ut duis commodo elit sint est. Voluptate reprehenderit magna esse laborum ullamco laboris.</p>
+				<div>
+					<img alt="Article image 2" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F6%2F600%2F400&amp;w=640&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F6%2F600%2F400&amp;w=1200&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F6%2F600%2F400&amp;w=1200&amp;q=75">
+					<p>Anim do in ullamco cupidatat.</p>
+				</div>
+				<p>Laborum et laboris eu ex anim velit aliquip qui ullamco commodo nostrud. Deserunt ad aute nisi in labore amet consectetur cillum occaecat esse sint. Elit est fugiat excepteur id reprehenderit nostrud pariatur proident. Sunt aliquip est et proident adipisicing ex enim nisi occaecat. Dolore consequat ut qui voluptate reprehenderit cillum veniam ea ad consequat non ullamco do veniam amet.</p>
+				<p>Sint exercitation aliquip dolore. In dolor culpa est ipsum do. Cillum velit adipisicing nostrud. Irure tempor ipsum et cupidatat amet incididunt. Ut nulla mollit esse excepteur ullamco voluptate elit aliqua labore enim magna laboris et est.</p>
+				<p>Nisi eu incididunt exercitation ipsum proident laborum ad est labore sint. Tempor nostrud mollit ipsum cillum eu deserunt deserunt elit cupidatat excepteur dolore do id. Labore exercitation eiusmod eu minim do velit ex. Ullamco laborum est eu magna minim ex eiusmod enim tempor occaecat fugiat nostrud. Fugiat sint et dolore exercitation in adipisicing est consectetur dolor. Ea laborum ex aliquip enim ipsum labore nostrud pariatur laboris eiusmod amet ullamco.</p>
+				<div>
+					<img alt="Article image 3" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" srcset="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F9%2F600%2F400&amp;w=640&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F9%2F600%2F400&amp;w=1200&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2F9%2F600%2F400&amp;w=1200&amp;q=75">
+					<p>Laboris laboris magna excepteur irure aliqua ea in voluptate officia.</p>
+				</div>
+			</article>
+		</div>
+</body></html>
