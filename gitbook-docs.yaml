@@ -1,0 +1,53 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Documentation
+  structure:
+    - type: section-group
+      key: section-group-1
+      title: Documention
+      icon: book-open
+      draft: true
+      children: []
+    - type: section
+      key: section-1
+      title: Documentation
+      path: gaffa
+      icon: book-open
+      default: true
+      children:
+        - type: space
+          key: space-1
+          title: Documentation
+          path: gaffa
+          default: true
+          content:
+            directory: ./docs
+    - type: section
+      key: section-2
+      title: Changelog
+      path: changelog
+      description: The Gaffa API changelog
+      icon: bars-staggered
+      children:
+        - type: space
+          key: space-2
+          title: Changelog
+          path: changelog
+          default: true
+          content:
+            directory: ./changelog
+    - type: section
+      key: section-3
+      title: AI Tools
+      path: ai-tools
+      description: Tools and tips for using Gaffa inside your favourite LLM tools
+      icon: head-side-gear
+      children:
+        - type: space
+          key: space-3
+          title: AI Tools
+          path: product-docs
+          default: true
+          draft: true
+          content:
+            directory: ./ai-tools
