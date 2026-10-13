@@ -50,11 +50,8 @@ echo ""
 echo "==> Checking internal markdown links point at existing files..."
 
 while IFS= read -r -d '' file; do
-  if [ "$(basename "$file")" = "SUMMARY.md" ]; then
-    base_dir="."
-  else
-    base_dir=$(dirname "$file")
-  fi
+  # Links resolve relative to the file, including each section's SUMMARY.md
+  base_dir=$(dirname "$file")
 
   while IFS= read -r link; do
     [ -z "$link" ] && continue
