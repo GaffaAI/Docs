@@ -70,4 +70,12 @@ When you're ready to start building your own browser requests, you'll want to ex
 
 ## <sup>**Want to build faster with AI assistance?**</sup>
 
-Gaffa gives your AI assistant everything it needs to write working code without you explaining the API yourself. Install the [Gaffa AI skills](https://app.gitbook.com/s/Mlx6Dm0tMl9eKr0tbRvJ/tools/gaffa-ai-skills) to teach tools like Claude Code, Cursor, Codex, etc how to write, debug, and test Gaffa requests, which also connects the [docs MCP server](https://app.gitbook.com/s/Mlx6Dm0tMl9eKr0tbRvJ/tools/gaffa-docs-mcp-server) so your assistant can look up actions and parameters as it works. If your tool doesn't support plugins, you can connect the MCP server on its own, or paste the [llms.txt](https://gaffa.dev/docs/llms-full.txt) file into any chat for a quick snapshot of the docs.
+Gaffa gives your AI assistant everything it needs to write working code without you explaining the API yourself. Install the [Gaffa AI skills](https://app.gitbook.com/s/Mlx6Dm0tMl9eKr0tbRvJ/tools/gaffa-ai-skills) to teach tools like Claude Code, Cursor, Codex, etc. how to write, debug, and test Gaffa requests; they also connect to the [docs MCP server](https://app.gitbook.com/s/Mlx6Dm0tMl9eKr0tbRvJ/tools/gaffa-docs-mcp-server) so your assistant can look up actions and parameters as it works. If your tool doesn't support plugins, you can connect the MCP server on its own, or paste the [llms.txt](https://gaffa.dev/docs/llms-full.txt) file into any chat for a quick snapshot of the docs.
+
+{% content-ref url="https://app.gitbook.com/s/Mlx6Dm0tMl9eKr0tbRvJ/tools/gaffa-ai-skills" %}
+[Gaffa AI Skills](https://app.gitbook.com/s/Mlx6Dm0tMl9eKr0tbRvJ/tools/gaffa-ai-skills)
+{% endcontent-ref %}
+
+{% content-ref url="https://app.gitbook.com/s/Mlx6Dm0tMl9eKr0tbRvJ/tools/gaffa-docs-mcp-server" %}
+[Gaffa Docs MCP Server](https://app.gitbook.com/s/Mlx6Dm0tMl9eKr0tbRvJ/tools/gaffa-docs-mcp-server)
+{% endcontent-ref %}
