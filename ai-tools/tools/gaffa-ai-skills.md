@@ -6,7 +6,7 @@ description: Set up your account and ship your first project in minutes.
 
 The Gaffa AI skills teach your AI coding tool (Cursor, Claude, Codex, Antigravity, etc.) everything it needs to build on the Gaffa API. Once installed, your agent can write and review code that calls Gaffa, use Gaffa to find information on a live website, diagnose a failing request, and put together a support report, all without you pasting API details into the chat.
 
-There are four skills, and they work in Claude Code, Codex, GitHub Copilot, Cursor, Antigravity, and Pi. The plugin install also adds the Gaffa docs [MCP server](gaffa-mcp-server.md), so your agent can look things up in these docs as it works.\
+There are four skills, and they work in Claude Code, Codex, GitHub Copilot, Cursor, Antigravity, and Pi. The plugin install also adds the Gaffa docs [MCP server](gaffa-docs-mcp-server.md), so your agent can look things up in these docs as it works.\
 \
 The Gaffa AI skills teach your AI coding tool everything it needs to build with the Gaffa API.
 

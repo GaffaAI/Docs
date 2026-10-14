@@ -2,8 +2,8 @@
 
 * [Gaffa AI Tools](README.md)
 
-## Available AI Tools
+## Tools
 
-* [Gaffa AI Skills](available-ai-tools/gaffa-ai-skills.md)
-* [Gaffa MCP Server](available-ai-tools/gaffa-mcp-server.md)
+* [Gaffa AI Skills](tools/gaffa-ai-skills.md)
+* [Gaffa Docs MCP Server](tools/gaffa-docs-mcp-server.md)
 * [Llms.txt](https://gaffa.dev/docs/llms-full.txt)

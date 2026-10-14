@@ -4,7 +4,7 @@ description: >-
   can search and read the Gaffa documentation while it writes code for you.
 ---
 
-# Gaffa MCP Server
+# Gaffa Docs MCP Server
 
 Gaffa provides a [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that gives AI tools like Claude, Cursor, VS Code, Codex, etc live access to the Gaffa documentation. Once it's connected, your assistant can look up actions, parameters, and examples on its own, instead of relying on whatever it remembers or on context you paste in.
 
@@ -131,7 +131,7 @@ Any tool that supports remote MCP servers over HTTP can connect. Add a new serve
 
 ## Install with the Gaffa plugin
 
-If you use Claude Code, Codex, Cursor, Antigravity, GitHub Copilot, or Pi, you can install the [Gaffa plugin](/broken/pages/fAOBlTMBNWAj9PM61KbB#quick-start) instead. It registers this MCP server for you and also adds skills that help your agent write, debug, and test Gaffa code.&#x20;
+If you use Claude Code, Codex, Cursor, Antigravity, GitHub Copilot, or Pi, you can install the [Gaffa plugin](gaffa-ai-skills.md) instead. It registers this MCP server for you and also adds skills that help your agent write, debug, and test Gaffa code.&#x20;
 
 ## Using the MCP server
 
