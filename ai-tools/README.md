@@ -1,6 +1,5 @@
 ---
-description: Use Gaffa with your AI coding tools
-icon: hand-wave
+description: Use Gaffa with your favourite AI coding tools.
 layout:
   width: default
   title:
