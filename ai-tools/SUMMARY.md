@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Gaffa AI Tools](README.md)
+* [Using Gaffa with AI](README.md)
 
 ## Tools
 
