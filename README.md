@@ -7,8 +7,8 @@ This repository holds the source for the [Gaffa](https://gaffa.dev) documentatio
 | Section | Live site | Folder |
 | --- | --- | --- |
 | Documentation | [gaffa.dev/docs](https://gaffa.dev/docs) | [`docs/`](docs/) |
-| Changelog | [gaffa.dev/docs/changelog](https://gaffa.dev/docs/changelog) | [`changelog/`](changelog/) |
 | AI Tools | [gaffa.dev/docs/ai-tools](https://gaffa.dev/docs/ai-tools) | [`ai-tools/`](ai-tools/) |
+| Changelog | [gaffa.dev/docs/changelog](https://gaffa.dev/docs/changelog) | [`changelog/`](changelog/) |
 
 ## Contributing a correction
 
