@@ -65,7 +65,3 @@
 * [How to scrape all images from a website using Gaffa](tutorials/how-to-scrape-all-images-from-a-website-using-gaffa.md)
 * [Extract and Fill Web Forms Automatically Using Gaffa](tutorials/extract-and-fill-web-forms-automatically-using-gaffa.md)
 * [Using the Gaffa LLMs.txt File with Your AI Assistant](tutorials/using-the-gaffa-llms.txt-file-with-your-ai-assistant.md)
-
-## AI Tools
-
-* [Llms.txt](https://gaffa.dev/docs/llms-full.txt)
