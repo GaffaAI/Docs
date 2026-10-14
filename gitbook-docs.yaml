@@ -6,6 +6,7 @@ site:
       key: section-1
       title: Documentation
       path: gaffa
+      description: ""
       icon: book-open
       default: true
       children:
@@ -16,20 +17,6 @@ site:
           default: true
           content:
             directory: ./docs
-    - type: section
-      key: section-2
-      title: Changelog
-      path: changelog
-      description: The Gaffa API changelog
-      icon: bars-staggered
-      children:
-        - type: space
-          key: space-2
-          title: Changelog
-          path: changelog
-          default: true
-          content:
-            directory: ./changelog
     - type: section
       key: section-3
       title: AI Tools
@@ -44,3 +31,17 @@ site:
           default: true
           content:
             directory: ./ai-tools
+    - type: section
+      key: section-2
+      title: Changelog
+      path: changelog
+      description: The Gaffa API changelog
+      icon: bars-staggered
+      children:
+        - type: space
+          key: space-2
+          title: Changelog
+          path: changelog
+          default: true
+          content:
+            directory: ./changelog
