@@ -43,6 +43,14 @@
 * [Mapping Requests](features/mapping-requests.md)
 * [Data Retention](features/data-retention.md)
 
+## Tutorials
+
+* [Convert any webpage into LLM-ready Markdown using Gaffa](tutorials/convert-any-webpage-into-llm-ready-markdown-using-gaffa.md)
+* [Capture a full-height screenshot of a webpage](tutorials/capture-a-full-height-screenshot-of-a-webpage.md)
+* [How to scrape all images from a website using Gaffa](tutorials/how-to-scrape-all-images-from-a-website-using-gaffa.md)
+* [Extract and Fill Web Forms Automatically Using Gaffa](tutorials/extract-and-fill-web-forms-automatically-using-gaffa.md)
+* [Using the Gaffa LLMs.txt File with Your AI Assistant](tutorials/using-the-gaffa-llms.txt-file-with-your-ai-assistant.md)
+
 ## API Reference
 
 * [API Reference](api-reference/api-reference.md)
@@ -57,11 +65,3 @@
 * [POST v1/site/map](api-reference/post-v1-site-map.md)
 * [GET v1/site/map](api-reference/get-v1-site-map.md)
 * [GET v1/site/map/{id}](api-reference/get-v1-site-map-id.md)
-
-## Tutorials
-
-* [Convert any webpage into LLM-ready Markdown using Gaffa](tutorials/convert-any-webpage-into-llm-ready-markdown-using-gaffa.md)
-* [Capture a full-height screenshot of a webpage](tutorials/capture-a-full-height-screenshot-of-a-webpage.md)
-* [How to scrape all images from a website using Gaffa](tutorials/how-to-scrape-all-images-from-a-website-using-gaffa.md)
-* [Extract and Fill Web Forms Automatically Using Gaffa](tutorials/extract-and-fill-web-forms-automatically-using-gaffa.md)
-* [Using the Gaffa LLMs.txt File with Your AI Assistant](tutorials/using-the-gaffa-llms.txt-file-with-your-ai-assistant.md)
