@@ -28,7 +28,7 @@ Gaffa includes four skills:
 
 They work with Claude Code, Codex, Cursor, Antigravity, GitHub Copilot, and Pi.
 
-When you install Gaffa as a plugin, you also get the [Gaffa docs MCP server](/broken/pages/SwNfUh4YIdklcr2rg0p5), which lets your agent look things up in the Gaffa documentation while it works.
+When you install Gaffa as a plugin, you also get the [Gaffa docs MCP server](gaffa-docs-mcp-server.md), which lets your agent look things up in the Gaffa documentation while it works.
 
 ## Quick start
 
