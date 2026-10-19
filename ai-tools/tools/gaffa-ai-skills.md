@@ -383,7 +383,7 @@ Reload Cursor if the update doesn't appear straight away.
 {% endstepper %}
 {% endtab %}
 
-{% tab title="Antigravitty" %}
+{% tab title="Antigravity" %}
 **Antigravity 2.0 or IDE**
 
 {% stepper %}
@@ -432,7 +432,7 @@ agy plugin install https://github.com/GaffaAI/gaffa-for-ai
 {% step %}
 #### Restart Antigravity CLI
 
-Restart your Antigravity CLI session so it loads the updated skills.
+Restart your Antigravity CLI session, so it loads the updated skills.
 {% endstep %}
 {% endstepper %}
 {% endtab %}
@@ -474,4 +474,4 @@ The agent tries to solve the problem first. If it can't, it makes a local report
 
 **A skill doesn't show up after installing.** Restart or reload your tool. Skills are picked up when the tool starts.
 
-**Still stuck?** Run `/gaffa-support`, or [contat Gaffa](https://gaffa.dev/contact).
+**Still stuck?** Run `/gaffa-support`, or [contact Gaffa](https://gaffa.dev/contact).
