@@ -4,13 +4,9 @@ description: Set up your account and ship your first project in minutes.
 
 # Gaffa AI Skills
 
-The Gaffa AI skills teach your AI coding tool (Cursor, Claude, Codex, Antigravity, etc.) everything it needs to build on the Gaffa API. Once installed, your agent can write and review code that calls Gaffa, use Gaffa to find information on a live website, diagnose a failing request, and put together a support report, all without you pasting API details into the chat.
-
-There are four skills, and they work in Claude Code, Codex, GitHub Copilot, Cursor, Antigravity, and Pi. The plugin install also adds the Gaffa docs [MCP server](gaffa-docs-mcp-server.md), so your agent can look things up in these docs as it works.\
-\
 The Gaffa AI skills teach your AI coding tool everything it needs to build with the Gaffa API.
 
-**Once installed, your agent can:**
+Once installed, your agent can:
 
 * write and review code that calls Gaffa
 * use Gaffa to find information on a live website
@@ -21,123 +17,224 @@ You do not need to paste API details or Gaffa documentation into every chat.
 
 Gaffa includes four skills:
 
-1. `gaffa-authoring` — Writes, edits, ports, and reviews code that calls the Gaffa API. It runs automatically when you ask for Gaffa code and checks the live docs before it writes anything.
-2. `gaffa-find` — Finds one piece of information on a website from a URL and a plain-language goal. It tries, checks the result, and refines until it gets it.
-3. `gaffa-debug` — Works out why a request failed from its recording or `brq_` ID, then suggests the smallest useful fix.
-4. `gaffa-support` — When you're stuck, it tries to solve the problem first, then packages a redacted report you can email to support.
+* **`gaffa-authoring`** — Writes, edits, ports, and reviews code that calls the Gaffa API. It runs automatically when you ask for Gaffa code and checks the live docs before it writes anything.
+* **`gaffa-find`** — Finds one piece of information on a website from a URL and a plain-language goal. It tries, checks the result, and refines until it gets it.
+* **`gaffa-debug`** — Works out why a request failed from its recording or `brq_` ID, then suggests the smallest useful fix.
+* **`gaffa-support`** — When you're stuck, it tries to solve the problem first, then packages a redacted report you can email to support.
 
-They work with Claude Code, Codex, Cursor, Antigravity, GitHub Copilot, and Pi.
+They work with Claude Code, Codex, GitHub Copilot, Cursor, Antigravity, and Pi.
 
-When you install Gaffa as a plugin, you also get the [Gaffa docs MCP server](gaffa-docs-mcp-server.md), which lets your agent look things up in the Gaffa documentation while it works.
+When you install the skills with the [Gaffa CLI](gaffa-cli.md) or as a [plugin](gaffa-ai-skills.md#install-as-a-plugin), you also get the [Gaffa docs MCP server](gaffa-docs-mcp-server.md), which lets your agent look things up in the Gaffa documentation while it works.
 
 ## Quick start
 
-If you use Claude Code, run these two commands in your terminal:
+{% stepper %}
+{% step %}
+### Install with the Gaffa CLI (recommended)
 
-```shellscript
-claude plugin marketplace add https://github.com/GaffaAI/gaffa-for-ai
-claude plugin install gaffa@gaffa --scope project
+Run this in your project folder:
+
+```bash
+npx @gaffa-dev/cli install
 ```
 
-Then [set your API key](gaffa-ai-skills.md#before-you-start) and ask your agent to do something with Gaffa.
+Pick your tools and a scope when it asks. The CLI installs the skills and the Gaffa docs MCP server for Claude Code, Codex, GitHub Copilot, Cursor, Antigravity, and Pi. See Gaffa CLI for every option.
+{% endstep %}
 
-{% hint style="info" %}
-Use the full URL in the first command. Claude Code clones the `owner/repo` shorthand over SSH by default, which fails if you don't have a GitHub SSH key.
-{% endhint %}
+{% step %}
+### Set your API key
 
-Using another tool? Jump to [Set up your tool](gaffa-ai-skills.md#set-up-your-tool).
+The skills read your key from the `GAFFA_API_KEY` environment variable and nowhere else. They never ask you for it, write it to disk, or log it. You can create a key from your [dashboard](https://gaffa.dev/dashboard/api-keys). Keep it out of version control.
 
-## Before you start
+**macOS and Linux:** add this line to your shell profile (for example `~/.zshrc` or `~/.bashrc`), then open a new terminal:
 
-Two things apply to every tool.
-
-**1. Set your API key**
-
-The skills read your key from the `GAFFA_API_KEY` environment variable and nowhere else. They never ask you for it, write it to disk, or log it. Set it once in your shell profile so you don't have to paste it each session:
-
-```shellscript
+```bash
 export GAFFA_API_KEY='your_gaffa_api_key_here'
 ```
 
-You can create a key from your [dashboard](https://gaffa.dev/dashboard/api-keys). Keep it out of version control.
+**Windows (PowerShell):** run this once, then open a new terminal:
 
-**2. Allow Gaffa through your network**
+```powershell
+setx GAFFA_API_KEY "your_gaffa_api_key_here"
+```
+{% endstep %}
 
-The skills call `api.gaffa.dev` and read docs from `gaffa.dev`. If your tool runs in a sandbox, or you're behind a proxy that blocks outbound traffic, allow `gaffa.dev` and `*.gaffa.dev` first, or requests will fail with a connectivity error.
+{% step %}
+### Allow Gaffa through your network
 
-{% hint style="warning" %}
+The skills call `api.gaffa.dev` and read docs from `gaffa.dev`. If your tool runs in a sandbox, or you're behind a proxy that blocks outbound traffic, allow `gaffa.dev` and `*.gaffa.dev`, or requests will fail with a connectivity error.
+
+If neither applies to you, skip this step.
+{% endstep %}
+
+{% step %}
+#### Restart your tool and try it
+
+Restart or reload your AI tool so it loads the skills and your API key. Then ask your agent to do something with Gaffa. See Example prompts for ideas.
+{% endstep %}
+{% endstepper %}
+
+{% hint style="info" %}
 The skills use your Gaffa credits when they run requests. `gaffa-find` has a cost cap you can tune, and `gaffa-debug` only spends credits on an optional re-run, after asking you first. `gaffa-support` doesn't use any credits.
 {% endhint %}
 
-## Set up your tool
+## Installation options
+
+There are three ways to install the skills. Whichever you choose, steps 2 to 4 of the [Quick start](gaffa-ai-skills.md#quick-start) still apply.
+
+### Install with the CLI (recommended)
+
+The quickest way, and the one the Quick start uses. It works the same for all six tools and adds the docs MCP server for you.
+
+```bash
+npx @gaffa-dev/cli install
+```
+
+See [Gaffa CLI](gaffa-cli.md) for all the commands and options, including how to install without prompts.
+
+### Install as a plugin
+
+If you'd rather use your tool's own plugin system, you can install Gaffa as a plugin in Claude Code, Codex, Cursor, and Antigravity. For GitHub Copilot and Pi, use the [CLI](gaffa-ai-skills.md#install-with-the-gaffa-cli-recommended).
 
 {% tabs %}
 {% tab title="Claude Code" %}
-Install the plugin with the two commands from the [Quick Start](gaffa-ai-skills.md#quick-start). You can choose where it's installed with `--scope`:
+{% stepper %}
+{% step %}
+#### Add the Gaffa marketplace
+
+```bash
+claude plugin marketplace add https://github.com/GaffaAI/gaffa-for-ai
+```
+
+{% hint style="warning" %}
+Use the full URL. Claude Code clones the `owner/repo` shorthand over SSH by default, which fails if you don't have a GitHub SSH key.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+#### Install the plugin
+
+```bash
+claude plugin install gaffa@gaffa --scope project
+```
+
+You can choose where it's installed with `--scope`:
 
 * `user`: for you, in every project. This is the default.
 * `project`: shared with everyone who works on the project. Writes to `.claude/settings.json`.
 * `local`: only for you, in this project. Writes to `.claude/settings.local.json` and isn't shared.
+{% endstep %}
 
-Start a new Claude Code session afterwards so it loads the skills.
+{% step %}
+#### Start a new Claude Code session
+
+Close your current session and start a new one so Claude Code loads the skills.
+{% endstep %}
+{% endstepper %}
 {% endtab %}
 
 {% tab title="Codex" %}
-The command below adds the Gaffa marketplace, then install the plugin from it:
+{% stepper %}
+{% step %}
+#### Add the Gaffa marketplace
 
 ```bash
 codex plugin marketplace add https://github.com/GaffaAI/gaffa-for-ai
+```
+{% endstep %}
+
+{% step %}
+#### Install the plugin
+
+```bash
 codex plugin add gaffa@gaffa
 ```
+{% endstep %}
 
-Start a new Codex session afterwards so it loads the skills. In Codex, you start a skill with `$`, for example `$gaffa-find`, or pick it from the skills menu.
+{% step %}
+#### Start a new Codex session
+
+Close your current session and start a new one so Codex loads the skills.
+
+In Codex, you start a skill with `$`, for example `$gaffa-find`, or pick it from the skills menu.
+{% endstep %}
+{% endstepper %}
 {% endtab %}
 
 {% tab title="Cursor" %}
 Cursor plugins work across Cursor desktop, web, and the Cursor CLI, so you only need to install Gaffa once.
 
+{% hint style="info" %}
 You need Cursor 2.4 or later.
+{% endhint %}
 
-#### Install in Cursor
+**Install in Cursor**
 
-1. Open Cursor Settings and search for Plugins.
-2. Click **+ Add** and select **From a GitHub Repository**.
-3. Paste `https://github.com/GaffaAI/gaffa-for-ai`.
-4. Choose a scope: **User** to install it for yourself, or **Team** to share it with your team.
-5. Click **Import**.
-6. Once the import finishes, click **Add**.
+{% stepper %}
+{% step %}
+#### Open the plugin settings
 
-Reload Cursor afterwards if the plugin does not appear immediately.
+Open Cursor Settings and search for **Plugins**.
+{% endstep %}
 
-#### Using Cursor CLI
+{% step %}
+#### Add the Gaffa repository
+
+Click **+ Add** and select **From a GitHub Repository**, then paste:
+
+```
+https://github.com/GaffaAI/gaffa-for-ai
+```
+{% endstep %}
+
+{% step %}
+#### Choose a scope and import
+
+Choose **User** to install it for yourself, or **Team** to share it with your team. Then click **Import**.
+{% endstep %}
+
+{% step %}
+#### Add the plugin
+
+Once the import finishes, click **Add**. Reload Cursor if the plugin doesn't appear straight away.
+{% endstep %}
+{% endstepper %}
+
+**Using Cursor CLI**
 
 If you use the Cursor CLI, you can install with one command:
 
-```shellscript
+```bash
 cursor-agent plugin marketplace add https://github.com/GaffaAI/gaffa-for-ai
 ```
 
-The same installed plugin is available across Cursor's agent surfaces, including Cursor CLI. You do not need a separate Gaffa installation for the CLI.
+The plugin works across all of Cursor's agent surfaces, including the Cursor CLI. If you've already installed it in Cursor, you don't need to install it again for the CLI.
 {% endtab %}
 
 {% tab title="Antigravity" %}
 Gaffa can be used with Antigravity 2.0, Antigravity CLI, and the Antigravity IDE.
 
-#### Antigravity 2.0 or IDE
+**Antigravity 2.0 or IDE**
 
-For a global installation:
+{% stepper %}
+{% step %}
+#### Clone the plugin
+
+To make Gaffa available in all your workspaces:
 
 ```bash
 git clone --depth 1 https://github.com/GaffaAI/gaffa-for-ai ~/.gemini/config/plugins/gaffa
 ```
 
-This makes Gaffa available across your workspaces.
-
-For one project only:
+Or, to install it for one project only, run this in the project folder:
 
 ```bash
 git clone --depth 1 https://github.com/GaffaAI/gaffa-for-ai .agents/plugins/gaffa
 ```
+{% endstep %}
+
+{% step %}
+#### Remove the Git history (project install only)
 
 If you want to commit the project-level plugin for your team, remove the clone's Git history first:
 
@@ -145,75 +242,35 @@ If you want to commit the project-level plugin for your team, remove the clone's
 rm -rf .agents/plugins/gaffa/.git
 ```
 
-Otherwise, Git may treat the folder as another repository instead of storing its files normally.
+Otherwise, Git may treat the folder as a separate repository instead of storing its files normally. Skip this step for a global installation.
+{% endstep %}
 
-Restart or reload Antigravity afterwards.
+{% step %}
+#### Restart Antigravity
 
-#### Antigravity CLI
+Restart or reload Antigravity so it loads the skills.
+{% endstep %}
+{% endstepper %}
+
+**Antigravity CLI**
 
 If you use Antigravity CLI, you can install the plugin directly from GitHub:
 
-```shellscript
+```bash
 agy plugin install https://github.com/GaffaAI/gaffa-for-ai
 ```
 
 Restart your Antigravity CLI session afterwards.
 {% endtab %}
-
-{% tab title="GitHub Copilot" %}
-#### Using GitHub Copilot CLI
-
-Add the Gaffa marketplace and install the plugin:
-
-```bash
-copilot plugin marketplace add GaffaAI/gaffa-for-ai
-copilot plugin install gaffa@gaffa
-```
-
-Restart your Copilot session afterwards so it loads the skills.
-
-#### Using Copilot in VS Code, GitHub Copilot app, code review, or cloud agent
-
-Copy the Gaffa skills into a folder Copilot reads.
-
-From your project folder:
-
-```shellscript
-git clone --depth 1 https://github.com/GaffaAI/gaffa-for-ai /tmp/gaffa-for-ai
-mkdir -p .agents/skills
-cp -r /tmp/gaffa-for-ai/skills/* .agents/skills/
-```
-
-To make the skills available to you across projects:
-
-```shellscript
-mkdir -p ~/.agents/skills
-cp -r /tmp/gaffa-for-ai/skills/* ~/.agents/skills/
-```
-
-Restart or reload Copilot afterwards so it picks up the skills.
-
-This installs the skills but not the Gaffa docs MCP server. See[ Install by copying](gaffa-ai-skills.md#install-by-copying) to add the MCP server manually.
-{% endtab %}
-
-{% tab title="Pi" %}
-Install Gaffa skills directly from GitHub:
-
-```shellscript
-pi install https://github.com/GaffaAI/gaffa-for-ai
-```
-
-Restart Pi afterwards so it loads the Gaffa skills.
-{% endtab %}
 {% endtabs %}
 
-## Install by copying
+### Install by copying
 
-Every skill is a self-contained folder that follows the open Agent Skills format (a `SKILL.md` file with a name and description). That means you can copy the skills you want into the folder your tool reads. The skills don't depend on each other, so copy only the ones you need.
+Every skill is a self-contained folder that follows the open [Agent Skills](https://agentskills.io/) format (a `SKILL.md` file with a name and description). That means you can copy the skills you want into the folder your tool reads. The skills don't depend on each other, so copy only the ones you need.
 
 Get the folders from the `skills/` directory of the [gaffa-for-ai repository](https://github.com/GaffaAI/gaffa-for-ai), then copy them into the right place for your tool:
 
-<table><thead><tr><th width="179.0206298828125">Tool</th><th width="243.44805908203125">Project folder</th><th>Personal folder</th></tr></thead><tbody><tr><td>Claude Code</td><td><code>.claude/skills/</code></td><td><code>~/.claude/skills/</code></td></tr><tr><td>Cursor (2.4+)</td><td><code>.agents/skills/</code> or <code>.cursor/skills/</code></td><td><code>~/.agents/skills/</code> or <code>~/.cursor/skills/</code></td></tr><tr><td>Codex CLI</td><td><code>.agents/skills/</code></td><td><code>~/.agents/skills/</code></td></tr><tr><td>GitHub Copilot</td><td><code>.agents/skills/</code></td><td><code>~/.agents/skills/</code></td></tr><tr><td>Pi</td><td><code>.pi/skills/</code></td><td><code>~/.pi/agent/skills/</code></td></tr><tr><td>Antigravity</td><td><code>.agents/skills/</code></td><td>Expand the section below for your version</td></tr></tbody></table>
+<table><thead><tr><th width="179.0206298828125">Tool</th><th width="243.44805908203125">Project folder</th><th>Personal folder</th></tr></thead><tbody><tr><td>Claude Code</td><td><code>.claude/skills/</code></td><td><code>~/.claude/skills/</code></td></tr><tr><td>Cursor (2.4+)</td><td><code>.agents/skills/</code> or <code>.cursor/skills/</code></td><td><code>~/.agents/skills/</code> or <code>~/.cursor/skills/</code></td></tr><tr><td>Codex CLI</td><td><code>.agents/skills/</code></td><td><code>~/.agents/skills/</code></td></tr><tr><td>Antigravity</td><td><code>.agents/skills/</code></td><td>Expand the section below for your version</td></tr></tbody></table>
 
 <details>
 
@@ -245,94 +302,139 @@ Copying the folders installs the skills but not the docs MCP server, which the p
 
 How you update Gaffa depends on how you installed it.
 
+### If you installed with the CLI
+
+Run `install` again:
+
+```bash
+npx @gaffa-dev/cli install
+```
+
+It fetches the latest skills and removes any that are no longer part of Gaffa. Restart or reload your tool afterwards.
+
+### If you installed as a plugin
+
 {% tabs %}
 {% tab title="Claude Code" %}
-Update the Gaffa marketplace:
+{% stepper %}
+{% step %}
+#### Update the Gaffa marketplace
 
-```shellscript
+```bash
 claude plugin marketplace update gaffa
 ```
+{% endstep %}
 
-Then update the Gaffa plugin:
+{% step %}
+#### Update the plugin
 
-```shellscript
+```bash
 claude plugin update gaffa@gaffa
 ```
+{% endstep %}
 
-Start a new Claude Code session afterwards.
+{% step %}
+#### Start a new Claude Code session
+
+Close your current session and start a new one so Claude Code loads the updated skills.
+{% endstep %}
+{% endstepper %}
 {% endtab %}
 
 {% tab title="Codex" %}
-Refresh the Gaffa marketplace:
+{% stepper %}
+{% step %}
+#### Update the Gaffa marketplace
 
 ```bash
 codex plugin marketplace upgrade gaffa
 ```
+{% endstep %}
 
-Start a new Codex session afterwards.
+{% step %}
+#### Start a new Codex session
+
+Close your current session and start a new one so Codex loads the updated skills.
+{% endstep %}
+{% endstepper %}
 {% endtab %}
 
 {% tab title="Cursor" %}
-In Cursor, open **Settings → Plugins**, find **Gaffa**, and install the available update.
+{% stepper %}
+{% step %}
+#### Install the update
 
-**Or update it from the CLI:**
+In Cursor, open **Settings → Plugins**, find Gaffa, and install the available update.
 
-```shellscript
+Or update it from the Cursor CLI:
+
+```bash
 cursor-agent plugin marketplace update gaffa
 ```
 
-Reload Cursor afterwards if needed.
+You only need to do one of these. The plugin works across Cursor and the Cursor CLI, so you don't need to update it in both.
+{% endstep %}
 
-Because Cursor plugins work across the editor and Cursor CLI, you do not need to update a separate CLI copy.
-{% endtab %}
+{% step %}
+#### Reload Cursor
 
-{% tab title="GitHub Copilot" %}
-Update Gaffa:
-
-```shellscript
-copilot plugin update gaffa
-```
-
-Restart your Copilot session afterwards.
-
-#### Other Copilot surfaces
-
-Replace the copied skill folders with the latest versions from the Gaffa repository.
+Reload Cursor if the update doesn't appear straight away.
+{% endstep %}
+{% endstepper %}
 {% endtab %}
 
 {% tab title="Antigravitty" %}
+**Antigravity 2.0 or IDE**
+
+{% stepper %}
+{% step %}
+#### Pull the latest version
+
 For a global installation:
 
-```shellscript
-cd ~/.gemini/config/plugins/gaffa
-git pull
+```bash
+git -C ~/.gemini/config/plugins/gaffa pull
 ```
 
-For a project installation:
+Or, for a project installation, run this in the project folder:
 
-```shellscript
-cd .agents/plugins/gaffa
-git pull
+```bash
+git -C .agents/plugins/gaffa pull
 ```
+{% endstep %}
 
-Restart or reload Antigravity afterwards.
+{% step %}
+#### Restart Antigravity
 
-For Antigravity CLI:
+Restart or reload Antigravity so it loads the updated skills.
+{% endstep %}
+{% endstepper %}
 
-```shellscript
+**Antigravity CLI**
+
+{% stepper %}
+{% step %}
+#### Uninstall the plugin
+
+```bash
 agy plugin uninstall gaffa
+```
+{% endstep %}
+
+{% step %}
+#### Install it again
+
+```bash
 agy plugin install https://github.com/GaffaAI/gaffa-for-ai
 ```
-{% endtab %}
+{% endstep %}
 
-{% tab title="Pi" %}
-Update installed Pi packages:
+{% step %}
+#### Restart Antigravity CLI
 
-```shellscript
-pi update --extensions
-```
-
-Restart Pi afterwards.
+Restart your Antigravity CLI session so it loads the updated skills.
+{% endstep %}
+{% endstepper %}
 {% endtab %}
 {% endtabs %}
 
