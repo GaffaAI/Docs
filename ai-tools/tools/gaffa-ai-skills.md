@@ -32,7 +32,7 @@ When you install the skills with the [Gaffa CLI](gaffa-cli.md) or as a [plugin](
 {% step %}
 ### Install with the Gaffa CLI (recommended)
 
-Run this in your project folder:
+Run this in your project folder. You need Node.js 22 or later. Run `node --version` to check.&#x20;
 
 ```bash
 npx @gaffa-dev/cli install
@@ -90,6 +90,7 @@ The quickest way, and the one the Quick start uses. It works the same for all si
 npx @gaffa-dev/cli install
 ```
 
+Requires Node.js 22 or later.\
 See [Gaffa CLI](gaffa-cli.md) for all the commands and options, including how to install without prompts.
 
 ### Install as a plugin

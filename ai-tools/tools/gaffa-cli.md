@@ -20,7 +20,7 @@ npx @gaffa-dev/cli install
 
 The CLI finds the AI tools on your machine, asks which ones to set up and where to install, then copies the skills and registers the docs MCP server.
 
-You don't need to install the CLI first. `npx` comes with Node.js, and it downloads and runs the latest version of the CLI for you. The first time you run it, npx asks `Ok to proceed?`. Type `y` to continue.
+You don't need to install the CLI first. `npx` comes with Node.js, and it downloads and runs the latest version of the CLI for you. You need Node.js 22 or later. Run `node --version` to check your Node version. The first time you run it, npx asks `Ok to proceed?`. Type `y` to continue.
 {% endstep %}
 
 {% step %}
