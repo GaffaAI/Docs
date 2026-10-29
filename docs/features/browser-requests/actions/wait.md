@@ -90,6 +90,10 @@ Add a wait action with a [`selector`](../selectors.md) for the element. Gaffa wa
 
 Add a `wait` action with `time` set in milliseconds. Use this for animations or deliberate pacing, rather than for content that might take a variable amount of time to load.
 
+#### Should I wait for a selector or a fixed time?
+
+Use a selector when you can, because it waits only until the element appears. A fixed `time` always waits the full duration, so save it for first calls when you don’t know the page structure yet.
+
 #### What happens if I set both time and selector?
 
 `time` takes over and `timeout` is ignored. The browser moves on once the time is up, whether or not the element appeared. Use one or the other, never both.
