@@ -99,7 +99,9 @@ This value cannot exceed your plan's maximum request runtime. If omitted, it def
 
 ### Plan limits
 
-<table data-header-hidden><thead><tr><th width="150.75994873046875"></th><th width="212.4432373046875"></th><th></th></tr></thead><tbody><tr><td><strong>Plan</strong></td><td><strong>Maximum <code>time_limit</code> (async)</strong></td><td><strong>Maximum <code>time_limit</code> (sync)</strong></td></tr><tr><td>Pay As You Go</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Starter</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Startup</td><td>120,000 ms (2 min)</td><td>120,000 ms (2 min)</td></tr><tr><td>Growth</td><td>300,000 ms (5 min)</td><td>120,000 ms (2 min) — clamped</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="150.75994873046875"></th><th width="212.4432373046875"></th><th></th></tr></thead><tbody><tr><td><strong>Plan</strong></td><td><strong>Maximum <code>time_limit</code> (async)</strong></td><td><strong>Maximum <code>time_limit</code> (sync)</strong></td></tr><tr><td>Pay As You Go</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Starter</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Startup</td><td>120,000 ms (2 min)</td><td>120,000 ms (2 min)</td></tr><tr><td>Growth</td><td>300,000 ms (5 min)</td><td>120,000 ms (2 min) — values above are rejected with <code>400</code></td></tr></tbody></table>
+
+On the Growth plan, synchronous requests are capped at 120,000 ms. An explicit sync `time_limit` above that is rejected with a `400` (`sync_request_too_long`) before the request runs — it is not truncated to the cap. Use an async request for longer time limits.
 
 **Example:**
 
