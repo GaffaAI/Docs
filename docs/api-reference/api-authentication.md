@@ -8,7 +8,7 @@ description: >-
 
 ## Creating Keys
 
-Once your account is approved, you will need to create an API key to send your requests to our API. \
+Once you create an account, you will need to create an API key to send your requests to our API.\
 \
 Go to your account [**Dashboard > API Keys**](https://gaffa.dev/dashboard/api-tokens) and create a new key with a name. Once the key is created, copy the value, and you can immediately start using it to make requests.
 
