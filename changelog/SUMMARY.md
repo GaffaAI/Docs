@@ -2,8 +2,9 @@
 
 ## 2026
 
-* [September](README.md)
-* [August](<README (1).md>)
+* [October](README.md)
+* [September](<README (1).md>)
+* [August](<README (1) (1).md>)
 * [July](2026/july.md)
 * [June](2026/june.md)
 * [May](2026/may.md)
