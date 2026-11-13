@@ -27,11 +27,11 @@ See [universal parameters](./#universal-parameters).
 
 ### Scroll Speed & Interval
 
-Gaffa gives you flexibility over how fast you scroll down the page, which can be really useful to get around restrictions enforced by some sites that detect and limit fast scrolling. By experimenting with `scroll_speed` and `interval`, you will be able to create the perfect scrolling action for your scenario. The speed settings are as follows:
+Gaffa gives you flexibility over how fast you scroll down the page, which is useful on sites that load content as you scroll or limit how fast a page can be scrolled. By experimenting with `scroll_speed` and `interval`, you will be able to create the perfect scrolling action for your scenario. The speed settings are as follows:
 
 * `instant`- The page will smoothly scroll to the desired position immediately, useful for sites with no rate limits or loading events caused by scroll actions.
-* `medium` - Human-like scrolling at a normal speed to the desired position. Gaffa will scroll in much the same way as you would using a mouse.
-* `slow`- Human-like scrolling at a very slow speed to the desired position. The speed is comparable to scrolling while reading a page.
+* `medium` - Scrolling at a natural speed to the desired position. Gaffa will scroll in much the same way as you would using a mouse.
+* `slow`- Scrolling at a very slow speed to the desired position. The speed is comparable to scrolling while reading a page.
 
 `interval`allows you to adjust the scroll speed further by inserting pauses between scroll events.
 
@@ -103,7 +103,7 @@ It sets the maximum duration the scroll can run, defaulting to 20 seconds. When 
 
 #### Which scroll speed should I use?
 
-Use `instant` when the site has no rate limits, `medium` for normal human-like scrolling, and `slow` for sites that throttle fast scrolling. For strict limits, use `instant` with a large `interval`.
+Use `instant` when the site has no rate limits, `medium` for natural-speed scrolling, and `slow` for sites that throttle fast scrolling. For strict limits, use `instant` with a large `interval`.
 
 #### Can I scroll back up a page with Gaffa?
 

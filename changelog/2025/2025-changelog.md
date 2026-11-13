@@ -29,4 +29,4 @@ Here are some of the things we launched in 2025.
 * [`click`](https://app.gitbook.com/s/yUba6osOT5MkKiV0wmgr/features/browser-requests/actions/click), [`type`](https://app.gitbook.com/s/yUba6osOT5MkKiV0wmgr/features/browser-requests/actions/type), [`wait`](https://app.gitbook.com/s/yUba6osOT5MkKiV0wmgr/features/browser-requests/actions/wait)— default timeout now 5 seconds
 * [`scroll` ](https://app.gitbook.com/s/yUba6osOT5MkKiV0wmgr/features/browser-requests/actions/scroll)— new params: `wait_time`, `max_scroll_time`, `scroll_speed`, `interval`
 * Added `max_media_bandwidth` and `time_limit` [settings](https://app.gitbook.com/s/yUba6osOT5MkKiV0wmgr/features/browser-requests)
-* New stealth browser technology
+* New browser technology for more reliable page loads

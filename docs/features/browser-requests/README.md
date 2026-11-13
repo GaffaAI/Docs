@@ -157,9 +157,9 @@ console.log(await response.json());
 {% endtab %}
 {% endtabs %}
 
-### Stealth
+### <a href="#stealth" id="stealth"></a>Reliability
 
-We believe your AI Agents should be able to use the internet exactly how humans would. Gaffa can help you access sites with some of the most challenging anti-bot restrictions by combining proxies, human-like behaviour, captcha solving, and a custom browser implementation. We handle and maintain all of that so you can focus on building your solution!
+Gaffa runs a real, full browser with residential proxies and automatic retries, so public pages load as they would for a normal visitor. Use of Gaffa is subject to our [Acceptable Use Policy](https://gaffa.dev/legal/acceptable-use-policy): respect robots.txt and rate limits, and don't access content behind logins or paywalls without authorisation.
 
 ### Learn More
 

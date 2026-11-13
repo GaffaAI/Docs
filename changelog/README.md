@@ -14,9 +14,9 @@ npx @gaffa-dev/cli install
 
 ### Platform Improvements
 
-#### Improved stealth performance
+#### Improved reliability on complex sites
 
-We've been working on the stealth performance of Gaffa's scraping browser so it's less readily recognized as a bot. This means fewer blocked requests and more reliable access to sites with aggressive bot detection, with no changes needed to your existing requests.
+We've been working on the browser infrastructure behind Gaffa's scraping browser. This means fewer failed requests and more reliable access to complex public sites, with no changes needed to your existing requests.
 
 ### Samples, Blog & Tutorials
 
