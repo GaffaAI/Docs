@@ -52,13 +52,13 @@ When the `max_media_bandwidth` value is set, Gaffa monitors the data being downl
 
 This setting is particularly useful for:
 
-* **Scraping news articles for text only** — Extract headlines and article content without downloading thumbnails
+* **Scraping product pages for text only** — Extract names, prices and descriptions without downloading product photos
 * **E-commerce price monitoring** — Track product prices and descriptions without loading product images
 * **Extracting reviews and text content** — Capture customer reviews without profile pictures
 * **SEO and content analysis** — Analyze page structure, headings, and text without media files
 
 {% hint style="success" %}
-**Performance Benefits:** Testing on image-heavy news sites showed up to **43% token savings** with no loss of text data. Sites with more media content see even greater savings in both cost and request speed.
+**Performance Benefits:** Testing on image-heavy sites showed up to **43% token savings** with no loss of text data. Sites with more media content see even greater savings in both cost and request speed.
 {% endhint %}
 
 {% hint style="warning" %}
