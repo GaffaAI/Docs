@@ -24,7 +24,7 @@ Request that the browser enter a specific piece of text into a field.
 See [universal parameters](./#universal-parameters).
 
 {% hint style="info" %}
-Sites that use more advanced bot detection often use keyboard events to detect unusual activity on their site, rather than immediately dropping all characters of the text into a field, our platform types the text in a human-like manner.
+Many sites react to individual keyboard events, for example to show autocomplete suggestions or validate input. Rather than dropping all characters of the text into a field at once, Gaffa types the text one character at a time so these features work as expected.
 {% endhint %}
 
 ### Usage
