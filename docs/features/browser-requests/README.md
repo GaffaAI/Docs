@@ -157,7 +157,7 @@ console.log(await response.json());
 {% endtab %}
 {% endtabs %}
 
-### <a href="#stealth" id="stealth"></a>Reliability
+### <a href="#reliability" id="reliability"></a>Reliability
 
 Gaffa runs a real, full browser with residential proxies and automatic retries, so public pages load as they would for a normal visitor. Use of Gaffa is subject to our [Acceptable Use Policy](https://gaffa.dev/legal/acceptable-use-policy): respect robots.txt and rate limits, and don't access content behind logins or paywalls without authorisation.
 
