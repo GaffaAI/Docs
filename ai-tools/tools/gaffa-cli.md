@@ -4,7 +4,7 @@ description: Set up the Gaffa AI skills in your AI coding tools with one command
 
 # Gaffa CLI
 
-The Gaffa CLI installs the [Gaffa AI skills](gaffa-ai-skills.md) into your AI coding tools and registers the [Gaffa docs MCP server](gaffa-docs-mcp-server.md), so your agent is ready to build with Gaffa. It works with Claude Code, Codex, GitHub Copilot, Cursor, Antigravity, and Pi.
+The Gaffa CLI installs the [Gaffa AI skills](gaffa-ai-skills.md) into your AI coding tools and registers the [Gaffa docs MCP server](gaffa-docs-mcp-server.md), so your agent is ready to build with Gaffa. It works with Claude Code, Codex, GitHub Copilot, Cursor, Antigravity, and Pi. The CLI is open source on [GitHub](https://github.com/GaffaAI/gaffa-cli) and published to [npm](https://www.npmjs.com/package/@gaffa-dev/cli) as `@gaffa-dev/cli`.
 
 ## Quick start
 
