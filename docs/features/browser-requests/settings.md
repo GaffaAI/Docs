@@ -99,7 +99,7 @@ This value cannot exceed your plan's maximum request runtime. If omitted, it def
 
 ### Plan limits
 
-<table data-header-hidden><thead><tr><th width="150.75994873046875"></th><th width="212.4432373046875"></th><th></th></tr></thead><tbody><tr><td><strong>Plan</strong></td><td><strong>Maximum <code>time_limit</code> (async)</strong></td><td><strong>Maximum <code>time_limit</code> (sync)</strong></td></tr><tr><td>Pay As You Go</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Starter</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Startup</td><td>120,000 ms (2 min)</td><td>120,000 ms (2 min)</td></tr><tr><td>Growth</td><td>300,000 ms (5 min)</td><td>120,000 ms (2 min) — clamped</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="150.75994873046875"></th><th width="212.4432373046875"></th><th></th></tr></thead><tbody><tr><td><strong>Plan</strong></td><td><strong>Maximum <code>time_limit</code> (async)</strong></td><td><strong>Maximum <code>time_limit</code> (sync)</strong></td></tr><tr><td>Pay As You Go</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Starter</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Startup</td><td>120,000 ms (2 min)</td><td>120,000 ms (2 min)</td></tr><tr><td>Growth</td><td>300,000 ms (5 min)</td><td>120,000 ms (2 min) </td></tr></tbody></table>
 
 **Example:**
 
@@ -175,7 +175,7 @@ Request:
   "async": false,
   "max_cache_age": 0,
   "settings": {
-    "time_limit": 90000,
+    "time_limit": 130000,
     "actions": [
       { "type": "wait", "selector": "table", "timeout": 5000 }
     ]
@@ -189,9 +189,8 @@ Response:
 {
   "error": {
     "type": "browser_request",
-    "id": "60000",
-    "code": "time_limit_too_long",
-    "message": "The time limit should be under the ms for your plan"
+    "code": "sync_request_too_long",
+    "message": "The maximum allowed time limit for a synchronous request with your plan is xxxms, use an async request for longer time limits"
   }
 }
 ```
