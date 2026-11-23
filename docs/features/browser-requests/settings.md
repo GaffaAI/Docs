@@ -99,7 +99,7 @@ This value cannot exceed your plan's maximum request runtime. If omitted, it def
 
 ### Plan limits
 
-<table data-header-hidden><thead><tr><th width="150.75994873046875"></th><th width="212.4432373046875"></th><th></th></tr></thead><tbody><tr><td><strong>Plan</strong></td><td><strong>Maximum <code>time_limit</code> (async)</strong></td><td><strong>Maximum <code>time_limit</code> (sync)</strong></td></tr><tr><td>Pay As You Go</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Starter</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Startup</td><td>120,000 ms (2 min)</td><td>120,000 ms (2 min)</td></tr><tr><td>Growth</td><td>300,000 ms (5 min)</td><td>120,000 ms (2 min) </td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="150.75994873046875"></th><th width="256.610107421875"></th><th width="268.5404052734375"></th></tr></thead><tbody><tr><td><strong>Plan</strong></td><td><strong>Sync: max <code>time_limit</code></strong> </td><td><strong>Async: max <code>time_limit</code></strong> </td></tr><tr><td>Pay As You Go</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Starter</td><td>60,000 ms (60s)</td><td>60,000 ms (60s)</td></tr><tr><td>Startup</td><td>120,000 ms (2 min)</td><td>120,000 ms (2 min)</td></tr><tr><td>Growth</td><td>120,000 ms (2 min) </td><td>300,000 ms (5 min)</td></tr></tbody></table>
 
 **Example:**
 
