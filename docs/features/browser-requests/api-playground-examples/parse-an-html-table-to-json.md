@@ -54,29 +54,28 @@ The `parse_table` action returns an `output` URL pointing to the extracted JSON:
 ```json
 {
   "data": {
-    "id": "brq_abc123ExampleRequestId",
-    "url": "https://demo.gaffa.dev/simulate/table?loadTime=1&rowCount=10",
+    "id": "brq_W3jgR52eKUxk9qLKCAL5zUAmFjs4zY",
+    "url": "https://demo.gaffa.dev/simulate/table?loadTime=1&rowCount=3",
     "state": "completed",
-    "credit_usage": 1,
+    "credit_usage": 0,
     "http_status_code": 200,
     "from_cache": false,
-    "started_at": "2025-06-09T12:00:00.000Z",
-    "completed_at": "2025-06-09T12:00:04.321Z",
-    "running_time": "00:00:04.3210000",
-    "page_load_time": "00:00:01.1230000",
+    "data_deleted": false,
+    "started_at": "2026-11-24T18:27:51.1631567Z",
+    "completed_at": "2026-11-24T18:27:55.4462851Z",
+    "running_time": "00:00:04.2831284",
+    "page_load_time": "00:00:00.4731942",
     "actions": [
       {
-        "id": "act_wait001",
+        "id": "act_W3jgRB6tGe5UYNXdQzS6ka3eZ4yTVg",
         "type": "wait",
-        "query": "wait?selector=table&timeout=5000&continue_on_fail=false",
-        "timestamp": "2025-06-09T12:00:01.500Z"
+        "timestamp": "2026-11-24T18:27:55.1989962Z"
       },
       {
-        "id": "act_parse001",
+        "id": "act_W3jgR5ePdbUp5oU9QCSzjuS9bVaCVB",
         "type": "parse_table",
-        "query": "parse_table?selector=table",
-        "timestamp": "2025-06-09T12:00:01.600Z",
-        "output": "https://storage.gaffa.dev/static/docs/parse-html-table/table.json"
+        "timestamp": "2026-11-24T18:27:55.4462737Z",
+        "output": "https://storage.gaffa.dev/brq/json/brq_W3jgR52eKUxk9qLKCAL5zUAmFjs4zY/act_W3jgR5ePdbUp5oU9QCSzjuS9bVaCVB.json"
       }
     ]
   }

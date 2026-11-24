@@ -10,7 +10,7 @@ Mapping requests allow you to extract all URLs from a website's sitemap. Gaffa m
 
 ## Example Request
 
-The [POST v1/site/map](../api-reference/post-v1-site-map.md) endpoint allows you to create a new request and await the result. It's a request with a simple payload containing the URL of the site you want to extract the sitemap of, and a `max_cache_age` in seconds, you would accept a response returned from the cache; the default is 0, and Gaffa will never return a cached response when used.
+The [POST v1/site/map](../api-reference/post-v1-site-map.md) endpoint allows you to create a new request and await the result. It's a request with a simple payload containing the URL of the site you want to extract the sitemap of, and an optional `max_cache_age`: the maximum age, in seconds, of a cached response you'd accept. The default is 21,600 seconds (6 hours). Set it to `0` to always get a fresh response.
 
 ```json
 {
@@ -30,7 +30,7 @@ For the Gaffa site, this will return the following response:
     "id": "smr_VQW4E66TdcQFZfCs6qavgdowPj3Bzk",
     "url": "https://gaffa.dev",
     "state": "completed",
-    "credit_usage": 1,
+    "credit_usage": 0,
     "from_cache": true,
     "started_at": "2025-08-22T11:05:43.328175Z",
     "completed_at": "2025-08-22T11:05:47.857941Z",

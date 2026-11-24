@@ -13,7 +13,7 @@ Gaffa's print-to-PDF feature allows you to easily export web pages as PDF files.
 
 ## API Request
 
-The request below uses the [POST endpoint](../../../api-reference/post-v1-browser-requests.md) to open the demo site on the table page, wait for the table to load, and then print the webpage to a PDF in A4 size with a 20-point margin and in portrait orientation.
+The request below uses the [POST endpoint](../../../api-reference/post-v1-browser-requests.md) to open the demo site on the table page, wait for the table to load, and then print the webpage to a PDF in A4 size with a 20-pixel margin and in portrait orientation.
 
 ```json
 {

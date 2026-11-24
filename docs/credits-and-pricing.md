@@ -18,4 +18,8 @@ Each successful request will deduct the corresponding number of credits from you
 
 ## Mapping Requests
 
-Mapping requests are also charged in credits at a rate of **1 credit per mapping request.**
+Mapping requests are charged in credits based on how the map is produced:
+
+* 2 credits when Gaffa builds the map.
+* 1 credit when it returns a cached map ranked by `search_query`.
+* 0 credits when it returns a cached map without `search_query`, or when the request partially fails.
