@@ -219,6 +219,6 @@ This will save you time waiting for a response and credits, because requests ret
 
 ## **Settings**
 
-The `settings` object allows you to configure how your browser requests behave. It currently supports six parameters that control request recording, media downloads, execution time limits, ad blocking, redirect logging, and browser actions.
+The `settings` object lets you configure how your browser requests behave, such as recording the request, limiting media downloads, setting a time limit, and choosing the actions to run.&#x20;
 
-You can read more about all available settings parameters [here](settings.md).
+You can read about every available setting on the [Settings page](settings.md).
