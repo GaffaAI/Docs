@@ -201,6 +201,8 @@ Omitting `time_limit` defaults to 60,000 ms (60 seconds) for both sync and async
 
 </details>
 
+***
+
 ## Ad Blocking
 
 **Parameter:** `block_ads` (boolean)
@@ -286,6 +288,56 @@ The relevant part of the **response**:
 * **Redirect chain / SEO auditing** — after a site migration or URL restructure, confirm old URLs resolve to the correct new destination in as few hops as possible. Long or looping redirect chains hurt both page speed and SEO.
 * **Link safety verification** — see every intermediate domain a link passes through before landing on its final destination, useful for checking that shortened or obfuscated links (in emails, ads, QR codes) aren't routing through anything unexpected.
 * **Debugging unexpected destinations** — when a request ends up somewhere you didn't expect (a geo-redirect, an A/B test split, a broken campaign link), the full chain shows exactly which hop diverged, rather than just the final URL.
+
+***
+
+## Non-Essential Asset Blocking
+
+**Parameter:** `block_non_essential_assets` (boolean)
+
+If you're extracting text or data from a page and don't need its web fonts or the stylesheets it pulls in from other sites, enable `block_non_essential_assets`. Gaffa then stops those files from loading, which saves bandwidth on every request that uses a proxy. The page's own CSS, its scripts, and its XHR and fetch calls still load as normal, so JavaScript single-page apps keep working.
+
+### Setting options <a href="#user-content-setting-options" id="user-content-setting-options"></a>
+
+You can set `block_non_essential_assets` in two ways:
+
+* `"block_non_essential_assets": false` — Non-essential asset blocking disabled (default)
+* `"block_non_essential_assets": true` — Non-essential asset blocking enabled
+
+### What it blocks <a href="#user-content-what-it-blocks" id="user-content-what-it-blocks"></a>
+
+When enabled, Gaffa blocks:
+
+* **Every font file**, wherever it's hosted, including the page's own fonts.
+* **Stylesheets from another site.** A stylesheet is treated as coming from another site when its host is different from the host of the page you requested. A subdomain or a parent domain of the page's host counts as the same site, so a stylesheet on `cdn.example.com` still loads on `example.com`.
+
+{% hint style="warning" %}
+When `block_non_essential_assets` is enabled, pages can look different, because text uses system fonts and styling from other sites won't load. Some pages even lose their styling completely. Don't use this setting for screenshots, PDFs, or anything that depends on layout.
+{% endhint %}
+
+### Common use cases <a href="#user-content-common-use-cases" id="user-content-common-use-cases"></a>
+
+This setting is particularly useful for:
+
+* **Extracting text and data** with actions such as <a href="actions/capture-dom.md" target="_blank">`capture_dom`</a>, [`generate_markdown`](actions/generate-markdown.md) or [`parse_json`](actions/parse-json.md), where how the page looks doesn't matter
+* **Cutting proxy bandwidth** on high-volume scraping jobs, alongside `block_ads` and `max_media_bandwidth`
+
+**Example:**
+
+```json
+{
+  "url": "https://www.allrecipes.com",
+  "proxy_location": "us",
+  "settings": {
+    "block_non_essential_assets": true,
+    "actions": [
+      {
+        "type": "capture_dom"
+      }
+    ]
+  }
+}
+```
 
 ***
 
